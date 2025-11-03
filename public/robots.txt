@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://vgogenius.gr
+
+# Sitemaps
+Sitemap: https://vgogenius.gr/sitemap.xml

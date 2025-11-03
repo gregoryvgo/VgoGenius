@@ -1,0 +1,121 @@
+/* ======== FONTS ======== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ======== TAILWIND ======== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ======== ΒΑΣΙΚΟ RESET ======== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Poppins', 'Book Antiqua', 'Palatino Linotype', Palatino, serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* ======== HERO ======== */
+/* Αφαιρέθηκε το overlay ώστε να φαίνεται σωστά το logo και το φόντο */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+/* ======== FADE-IN EFFECT ======== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======== ΚΟΥΤΙΑ ======== */
+.bg-white {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+/* ======== ΧΡΥΣΑ ΚΟΥΜΠΙΑ ======== */
+a.bg-\[\#ff7a00\],
+button.bg-\[\#ff7a00\],
+.btn-orange {
+  background-color: #e0b55a !important;
+  color: #fff !important;
+  transition: all 0.3s ease;
+}
+a.bg-\[\#ff7a00\]:hover,
+button.bg-\[\#ff7a00\]:hover,
+.btn-orange:hover {
+  background-color: #c79a44 !important;
+}
+
+/* ======== SLIDER ΕΙΚΟΝΕΣ ======== */
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ======== FOOTER ======== */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 2px solid #e0b55a;
+}
+
+/* ======== ΕΠΙΛΕΓΜΕΝΑ LINKS ======== */
+a,
+button,
+h1,
+h2,
+h3,
+.text-gold {
+  color: #e0b55a;
+}
+a:hover,
+button:hover {
+  color: #c79a44;
+}
+
+/* ======== ACCESSIBILITY ======== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+*:focus-visible {
+  outline: 2px solid #e2841a;
+  outline-offset: 2px;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+  }
+}
