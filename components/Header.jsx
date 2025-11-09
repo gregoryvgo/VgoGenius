@@ -29,7 +29,7 @@ export default function Header() {
   const closeMenu = () => setMenuOpen(false);
 
   const baseLink =
-    "relative px-3 py-[6px] font-medium text-lg transition-colors";
+    "relative px-3 py-[6px] font-medium text-xl transition-colors";
   const hoverLine = `
     before:content-[''] before:absolute before:left-1/2 before:bottom-0
     before:h-[2px] before:w-0 before:bg-[#e2841a]
