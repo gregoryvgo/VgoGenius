@@ -1,13 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Μικρή καθυστέρηση για smooth εμφάνιση μετά το render
     const timer = setTimeout(() => setVisible(true), 150);
     return () => clearTimeout(timer);
   }, []);
@@ -17,18 +15,16 @@ export default function Hero() {
       className="relative flex flex-col items-center justify-center text-center min-h-screen text-white overflow-hidden"
       style={{ isolation: "isolate" }}
     >
-      {/* ===== Φόντο Hero ===== */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/images/backpage-new.webp"
-          alt="VgoGenius Hero Background"
-          fill
-          priority
-          quality={85}
-          sizes="100vw"
-          className="object-cover brightness-75"
-        />
-      </div>
+      {/* ===== Βίντεο φόντο ===== */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover -z-10 brightness-75"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/videos/backpage.mp4" type="video/mp4" />
+      </video>
 
       {/* ===== Κεντρικό περιεχόμενο ===== */}
       <div
