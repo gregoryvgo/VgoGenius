@@ -52,7 +52,10 @@ export default function Hero() {
         {/* ===== Κουμπί Επικοινωνίας ===== */}
         <a
           href="/epikoinonia"
-          className="inline-block bg-[#e2841a] text-black font-semibold py-3 px-6 rounded-full hover:bg-[#ff9f2a] transition-colors duration-300"
+          className="inline-block bg-[#e2841a] text-black font-semibold py-3 px-6 rounded-full
+          hover:text-white transition-all duration-300
+          shadow-[0_0_25px_rgba(226,132,26,0.7)] hover:shadow-[0_0_45px_rgba(226,132,26,1)]
+          hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#e2841a] focus:ring-offset-2 focus:ring-offset-black"
         >
           Επικοινωνήστε μαζί μας
         </a>

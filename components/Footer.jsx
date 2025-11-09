@@ -9,18 +9,23 @@ export default function Footer() {
         </p>
 
         <div className="social-links mt-3 flex justify-center gap-6">
+          {/* Facebook */}
           <a
-            href="https://www.facebook.com/profile.php?id=61579276037702"
+            href="https://www.facebook.com/profile.php?id=61583187277864"
             target="_blank"
             aria-label="Facebook"
             rel="noopener noreferrer"
             className="transition-transform hover:scale-110"
           >
-            <i className="fab fa-facebook text-xl" style={{ color: "#1877F2" }}></i>
+            <i
+              className="fab fa-facebook text-xl"
+              style={{ color: "#1877F2" }}
+            ></i>
           </a>
 
+          {/* Instagram */}
           <a
-            href="https://www.instagram.com/dokimastiko.web/"
+            href="https://www.instagram.com/vgogenius/"
             target="_blank"
             aria-label="Instagram"
             rel="noopener noreferrer"

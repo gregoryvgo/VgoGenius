@@ -2,6 +2,7 @@ import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent"; 
 
 export const metadata = {
   title: "VgoGenius | Δημιουργία με Αξιοπιστία και Όραμα",
@@ -124,6 +125,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main style={{ position: "relative", zIndex: 10 }}>{children}</main>
         <Footer />
+        <CookieConsent /> 
       </body>
     </html>
   );

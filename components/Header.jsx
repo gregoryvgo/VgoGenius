@@ -23,152 +23,155 @@ export default function Header() {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 400);
+    }, 300);
   };
 
-  const baseLinkStyle =
-    "relative px-4 py-[4px] font-semibold overflow-hidden transition-colors duration-300";
+  const closeMenu = () => setMenuOpen(false);
 
-  const hoverBar = `
-    before:content-[''] before:absolute before:left-1/2 before:bottom-0 
-    before:w-0 before:h-[2px] before:bg-[#e2841a] 
-    before:transition-all before:duration-300 
+  const baseLink =
+    "relative px-3 py-[6px] font-medium text-lg transition-colors";
+  const hoverLine = `
+    before:content-[''] before:absolute before:left-1/2 before:bottom-0
+    before:h-[2px] before:w-0 before:bg-[#e2841a]
+    before:transition-all before:duration-300
     hover:before:w-full hover:before:left-0
   `;
 
   return (
-    <header className="fixed top-0 left-0 w-full h-[100px] flex items-center justify-center z-[9999] border-b border-[#333] shadow-lg backdrop-blur-md bg-black/85">
-      <div className="flex items-center justify-center w-full px-4 relative">
-        {/* Burger Button (Mobile) - accessibility: proper aria labels */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-          className="absolute right-6 top-4 md:hidden text-[#e2841a] focus:outline-none focus:ring-2 focus:ring-[#e2841a] focus:ring-offset-2 focus:ring-offset-black rounded"
-        >
-          {menuOpen ? <X size={30} aria-hidden="true" /> : <Menu size={30} aria-hidden="true" />}
-        </button>
+    <>
+      {menuOpen && (
+        <div
+          onClick={closeMenu}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9998] transition-opacity"
+        />
+      )}
 
-        {/* Navigation - accessibility: semantic nav with proper aria labels */}
-        <nav
-          id="mobile-menu"
-          aria-label="Κύρια πλοήγηση"
-          className={`${
-            menuOpen
-              ? "flex flex-col space-y-4 bg-black/95 absolute top-[100px] left-0 w-full py-8 z-[9999]"
-              : "hidden"
-          } md:flex md:flex-row md:space-x-14 md:static md:bg-transparent md:space-y-0 text-[1.25rem] items-center justify-center transition-all`}
-        >
-          {/* Αρχική - accessibility: proper aria-current for active page */}
-          <Link
-            href="/"
-            onClick={() => setMenuOpen(false)}
-            aria-current={pathname === "/" ? "page" : undefined}
-            className={`${baseLinkStyle} ${hoverBar} ${
-              pathname === "/"
-                ? "text-[#e2841a]"
-                : "text-white hover:text-[#e2841a]"
-            } focus:outline-none focus:ring-2 focus:ring-[#e2841a] focus:ring-offset-2 focus:ring-offset-black rounded`}
+      <header
+        className={`fixed top-0 left-0 w-full h-[90px] z-[9999] bg-black/85 border-b border-[#222] backdrop-blur-md flex items-center justify-center transition-transform duration-300 ${
+          menuOpen ? "translate-x-[200px]" : ""
+        }`}
+      >
+        <div className="w-full max-w-6xl px-6 flex items-center justify-center">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="absolute left-4 top-5 md:hidden text-[#e2841a]"
           >
-            Αρχική
-          </Link>
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
 
-          {/* Dropdown Περισσότερα */}
-          <div
-            className="relative"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link
-              href="/perissotera"
-              onClick={() => setMenuOpen(false)}
-              aria-current={pathname.startsWith("/perissotera") ? "page" : undefined}
-              aria-haspopup="true"
-              aria-expanded={isDropdownOpen}
-              className={`${baseLinkStyle} ${hoverBar} ${
-                pathname.startsWith("/perissotera")
-                  ? "text-[#e2841a]"
-                  : "text-white hover:text-[#e2841a]"
-              } focus:outline-none focus:ring-2 focus:ring-[#e2841a] focus:ring-offset-2 focus:ring-offset-black rounded`}
-            >
-              Περισσότερα
+          <nav className="hidden md:flex md:gap-10 md:items-center md:justify-center">
+            <Link href="/" className={`${baseLink} ${hoverLine}`}>
+              Αρχική
             </Link>
 
-            {isDropdownOpen && (
-              <div 
-                role="menu"
-                aria-label="Υπομενού περισσότερα"
-                className="absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-black text-[#e2841a] shadow-[0_0_20px_rgba(226,132,26,0.4)] rounded-md text-center w-64 border border-[#2d2d2d] text-[1rem] font-normal hidden md:block"
+            <div
+              className="relative hidden md:block"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link
+                href="/perissotera"
+                className={`${baseLink} ${hoverLine} cursor-pointer`}
               >
-                <Link
-                  href="/perissotera/ofeli-website"
-                  role="menuitem"
-                  className="block px-4 py-2 hover:bg-[#1a1a1a] hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#e2841a] focus:ring-inset"
-                >
-                  Ωφέλη Δημιουργίας Website
-                </Link>
-                <Link
-                  href="/perissotera/orismoi"
-                  role="menuitem"
-                  className="block px-4 py-2 hover:bg-[#1a1a1a] hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#e2841a] focus:ring-inset"
-                >
-                  Επεξήγηση Ορισμών
-                </Link>
-                <Link
-                  href="/perissotera/giati-emas"
-                  role="menuitem"
-                  className="block px-4 py-2 hover:bg-[#1a1a1a] hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#e2841a] focus:ring-inset"
-                >
-                  Γιατί Εμάς
-                </Link>
-              </div>
-            )}
-          </div>
+                Περισσότερα
+              </Link>
 
-          {/* Τιμοκατάλογος */}
-          <Link
-            href="/timokatalogos"
-            onClick={() => setMenuOpen(false)}
-            aria-current={pathname === "/timokatalogos" ? "page" : undefined}
-            className={`${baseLinkStyle} ${hoverBar} ${
-              pathname === "/timokatalogos"
-                ? "text-[#e2841a]"
-                : "text-white hover:text-[#e2841a]"
-            } focus:outline-none focus:ring-2 focus:ring-[#e2841a] focus:ring-offset-2 focus:ring-offset-black rounded`}
-          >
-            Τιμοκατάλογος
-          </Link>
+              {isDropdownOpen && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-black border border-[#333] shadow-lg rounded-md py-2 w-48 text-center">
+                  <Link
+                    href="/perissotera/ofeli-website"
+                    className={`relative block py-2 ${hoverLine} hover:text-[#e2841a]`}
+                  >
+                    Ωφέλη Website
+                  </Link>
+                  <Link
+                    href="/perissotera/orismoi"
+                    className={`relative block py-2 ${hoverLine} hover:text-[#e2841a]`}
+                  >
+                    Ορισμοί
+                  </Link>
+                  <Link
+                    href="/perissotera/giati-emas"
+                    className={`relative block py-2 ${hoverLine} hover:text-[#e2841a]`}
+                  >
+                    Γιατί Εμάς
+                  </Link>
+                </div>
+              )}
+            </div>
 
-          {/* Εταιρεία */}
-          <Link
-            href="/etaireia"
-            onClick={() => setMenuOpen(false)}
-            aria-current={pathname === "/etaireia" ? "page" : undefined}
-            className={`${baseLinkStyle} ${hoverBar} ${
-              pathname === "/etaireia"
-                ? "text-[#e2841a]"
-                : "text-white hover:text-[#e2841a]"
-            } focus:outline-none focus:ring-2 focus:ring-[#e2841a] focus:ring-offset-2 focus:ring-offset-black rounded`}
-          >
-            Εταιρεία
-          </Link>
+            <Link href="/timokatalogos" className={`${baseLink} ${hoverLine}`}>
+              Τιμοκατάλογος
+            </Link>
 
-          {/* Επικοινωνία */}
+            <Link href="/etaireia" className={`${baseLink} ${hoverLine}`}>
+              Εταιρεία
+            </Link>
+
+            <Link href="/epikoinonia" className={`${baseLink} ${hoverLine}`}>
+              Επικοινωνία
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      <div
+        className={`fixed top-0 left-0 h-full w-[200px] bg-black border-r border-[#333] z-[10000] pt-24 px-6 flex flex-col gap-6 text-lg transform transition-transform duration-300 ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <Link href="/" onClick={closeMenu} className={`${baseLink} ${hoverLine}`}>
+          Αρχική
+        </Link>
+
+        <div className="flex flex-col space-y-2">
           <Link
-            href="/epikoinonia"
-            onClick={() => setMenuOpen(false)}
-            aria-current={pathname === "/epikoinonia" ? "page" : undefined}
-            className={`${baseLinkStyle} ${hoverBar} ${
-              pathname === "/epikoinonia"
-                ? "text-[#e2841a]"
-                : "text-white hover:text-[#e2841a]"
-            } focus:outline-none focus:ring-2 focus:ring-[#e2841a] focus:ring-offset-2 focus:ring-offset-black rounded`}
+            href="/perissotera/ofeli-website"
+            onClick={closeMenu}
+            className={`${hoverLine} py-1 hover:text-[#e2841a]`}
           >
-            Επικοινωνία
+            Ωφέλη Website
           </Link>
-        </nav>
+          <Link
+            href="/perissotera/orismoi"
+            onClick={closeMenu}
+            className={`${hoverLine} py-1 hover:text-[#e2841a]`}
+          >
+            Ορισμοί
+          </Link>
+          <Link
+            href="/perissotera/giati-emas"
+            onClick={closeMenu}
+            className={`${hoverLine} py-1 hover:text-[#e2841a]`}
+          >
+            Γιατί Εμάς
+          </Link>
+        </div>
+
+        <Link
+          href="/timokatalogos"
+          onClick={closeMenu}
+          className={`${baseLink} ${hoverLine}`}
+        >
+          Τιμοκατάλογος
+        </Link>
+
+        <Link
+          href="/etaireia"
+          onClick={closeMenu}
+          className={`${baseLink} ${hoverLine}`}
+        >
+          Εταιρεία
+        </Link>
+
+        <Link
+          href="/epikoinonia"
+          onClick={closeMenu}
+          className={`${baseLink} ${hoverLine}`}
+        >
+          Επικοινωνία
+        </Link>
       </div>
-    </header>
+    </>
   );
 }
