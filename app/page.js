@@ -5,9 +5,10 @@ import { generatePageMeta } from "@/lib/seo";
 export const metadata = generatePageMeta({
   title: "Αρχική",
   description:
-    "Η VgoGenius δημιουργεί websites με Next.js και Tailwind CSS — γρήγορα, μοντέρνα και SEO-optimized.",
+    "Η VgoGenius, του Γρηγόρη Βγόντζα, δημιουργεί websites με Next.js και Tailwind CSS — γρήγορα, μοντέρνα και SEO-optimized.",
   path: "/",
   keywords: [
+    "Γρηγόρης Βγόντζας",
     "VgoGenius",
     "κατασκευή ιστοσελίδων",
     "web design",

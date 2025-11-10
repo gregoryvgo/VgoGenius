@@ -72,8 +72,10 @@ export default function EtairiaClient() {
           <strong>πραγματική επιτυχία των πελατών μας</strong>.
         </p>
 
-        <div className="text-left text-[#e2841a] font-semibold italic mt-8 text-[1.15rem]">
-          Με εκτίμηση,<br /> Γρηγόρης Βγόντζας
+        <div className="text-left text-[#e2841a] font-semibold italic mt-8 text-[1.15rem] leading-relaxed">
+          Με εκτίμηση,<br />
+          Ο Ιδρυτής της εταιρείας,<br />
+          Γρηγόρης Βγόντζας
         </div>
       </div>
     </section>
