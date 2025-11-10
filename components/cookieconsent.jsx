@@ -13,7 +13,7 @@ export default function CookieConsent() {
       const timer = setTimeout(() => setVisible(true), 1000);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, []); 
 
   const handleChoice = (choice) => {
     localStorage.setItem("cookiesAccepted", choice ? "true" : "false");
