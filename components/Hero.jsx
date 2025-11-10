@@ -22,6 +22,8 @@ export default function Hero() {
         loop
         muted
         playsInline
+        preload="none"
+        poster="/images/backpage-new.webp"
       >
         <source src="/videos/backpage.mp4" type="video/mp4" />
       </video>
