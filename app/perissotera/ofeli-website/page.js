@@ -1,3 +1,4 @@
+// app/perissotera/ofeli-website/page.tsx
 import { generatePageMeta } from "@/lib/seo";
 
 // SEO metadata for this page
@@ -19,9 +20,18 @@ export const metadata = generatePageMeta({
 
 export default function OfeliWebsite() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6 py-36">
-      <div className="w-full max-w-4xl bg-black/60 border border-[#2d2d2d] rounded-3xl shadow-[0_0_40px_rgba(226,132,26,0.3)] p-12 text-left leading-relaxed backdrop-blur-md">
-        <h1 className="text-5xl font-bold text-center mb-10 text-[#e2841a]">
+    <section
+      lang="el"
+      className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 sm:px-6 py-28 sm:py-36 overflow-x-hidden"
+    >
+      <div className="w-full max-w-4xl bg-black/60 border border-[#2d2d2d] rounded-3xl shadow-[0_0_40px_rgba(226,132,26,0.3)] p-6 sm:p-12 text-left leading-relaxed backdrop-blur-md">
+        <h1
+          className="
+            text-lg sm:text-2xl md:text-4xl
+            font-bold text-center mb-10 text-[#e2841a]
+            leading-tight break-words hyphens-auto max-w-full mx-auto
+          "
+        >
           Ωφέλη Δημιουργίας Website
         </h1>
 
@@ -34,7 +44,13 @@ export default function OfeliWebsite() {
           κέντρο επικοινωνίας, προβολής και ανάπτυξης της εταιρείας.
         </p>
 
-        <h2 className="text-2xl font-semibold text-[#e2841a] mb-4">
+        <h2
+          className="
+            text-base sm:text-xl md:text-2xl
+            font-semibold text-[#e2841a] mb-4
+            leading-snug break-words hyphens-auto max-w-full
+          "
+        >
           Οι βασικοί λόγοι που ωφελούν την επιχείρησή σας να δημιουργήσει website:
         </h2>
 

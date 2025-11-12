@@ -1,3 +1,4 @@
+// app/components/TimokatalogosClient.tsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -11,16 +12,32 @@ export default function TimokatalogosClient() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6 py-36">
+    <section
+      lang="el"
+      className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 sm:px-6 py-28 sm:py-36 overflow-x-hidden"
+    >
       <div
-        className={`w-full max-w-5xl bg-black/70 border border-[#2d2d2d] rounded-3xl shadow-[0_0_50px_rgba(226,132,26,0.4)] p-12 text-left leading-relaxed backdrop-blur-md transition-all duration-700 ${
+        className={`w-full max-w-5xl bg-black/70 border border-[#2d2d2d] rounded-3xl shadow-[0_0_50px_rgba(226,132,26,0.4)] p-6 sm:p-12 text-left leading-relaxed backdrop-blur-md transition-all duration-700 ${
           shake ? "animate-shake" : ""
         }`}
       >
-        <h1 className="text-5xl font-bold text-center mb-2 text-[#e2841a]">
+        <h1
+          className="
+            text-lg sm:text-2xl md:text-4xl
+            font-bold text-center mb-2 text-[#e2841a]
+            leading-tight break-words hyphens-auto max-w-full mx-auto
+          "
+        >
           Τιμοκατάλογος
         </h1>
-        <h2 className="text-2xl font-semibold text-center mb-12 text-[#e2841a]">
+
+        <h2
+          className="
+            text-lg sm:text-2xl md:text-3xl
+            font-semibold text-center mb-10 sm:mb-12 text-[#e2841a]
+            leading-snug break-words hyphens-auto max-w-full mx-auto
+          "
+        >
           Προσφορά Κατασκευής Ιστοσελίδας
         </h2>
 
@@ -31,12 +48,12 @@ export default function TimokatalogosClient() {
           SEO, ασφαλές hosting και εύκολη διαχείριση.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-          <div className="bg-black border border-[#2d2d2d] rounded-2xl p-8 shadow-[0_0_30px_rgba(226,132,26,0.3)] hover:shadow-[0_0_50px_rgba(226,132,26,0.6)] transition-transform hover:scale-105">
-            <h3 className="text-2xl font-semibold text-[#e2841a] mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 text-center">
+          <div className="bg-black border border-[#2d2d2d] rounded-2xl p-6 md:p-8 shadow-[0_0_30px_rgba(226,132,26,0.3)] hover:shadow-[0_0_50px_rgba(226,132,26,0.6)] transition-transform hover:scale-105">
+            <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4">
               Βασικό
             </h3>
-            <p className="text-4xl font-bold mb-6 text-white">450 €</p>
+            <p className="text-3xl md:text-4xl font-bold mb-6 text-white">450 €</p>
             <ul className="text-gray-300 text-left space-y-2">
               <li>• Έως 4 σελίδες (Αρχική, Υπηρεσίες, Εταιρεία, Επικοινωνία)</li>
               <li>• Responsive design (κινητά & tablet)</li>
@@ -45,11 +62,11 @@ export default function TimokatalogosClient() {
             </ul>
           </div>
 
-          <div className="bg-black border border-[#2d2d2d] rounded-2xl p-8 shadow-[0_0_40px_rgba(226,132,26,0.4)] hover:shadow-[0_0_60px_rgba(226,132,26,0.7)] transition-transform hover:scale-105">
-            <h3 className="text-2xl font-semibold text-[#e2841a] mb-4">
+          <div className="bg-black border border-[#2d2d2d] rounded-2xl p-6 md:p-8 shadow-[0_0_40px_rgba(226,132,26,0.4)] hover:shadow-[0_0_60px_rgba(226,132,26,0.7)] transition-transform hover:scale-105">
+            <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4">
               Επαγγελματικό
             </h3>
-            <p className="text-4xl font-bold mb-6 text-white">690 €</p>
+            <p className="text-3xl md:text-4xl font-bold mb-6 text-white">690 €</p>
             <ul className="text-gray-300 text-left space-y-2">
               <li>• Έως 6 σελίδες (περιλαμβάνει gallery & blog)</li>
               <li>• Προηγμένο SEO (λέξεις-κλειδιά, Google Business, Analytics)</li>
@@ -58,11 +75,11 @@ export default function TimokatalogosClient() {
             </ul>
           </div>
 
-          <div className="bg-black border border-[#2d2d2d] rounded-2xl p-8 shadow-[0_0_50px_rgba(226,132,26,0.5)] hover:shadow-[0_0_70px_rgba(226,132,26,0.8)] transition-transform hover:scale-105">
-            <h3 className="text-2xl font-semibold text-[#e2841a] mb-4">
+          <div className="bg-black border border-[#2d2d2d] rounded-2xl p-6 md:p-8 shadow-[0_0_50px_rgba(226,132,26,0.5)] hover:shadow-[0_0_70px_rgba(226,132,26,0.8)] transition-transform hover:scale-105">
+            <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4">
               Premium
             </h3>
-            <p className="text-4xl font-bold mb-6 text-white">890 €</p>
+            <p className="text-3xl md:text-4xl font-bold mb-6 text-white">890 €</p>
             <ul className="text-gray-300 text-left space-y-2">
               <li>• Έως 10 σελίδες</li>
               <li>• Πλήρες SEO + Στρατηγική περιεχομένου (άρθρα, keywords)</li>
@@ -94,9 +111,7 @@ export default function TimokatalogosClient() {
           80% { transform: translate(4px, -2px) rotate(1deg); }
           100% { transform: translate(0, 0) rotate(0deg); }
         }
-        .animate-shake {
-          animation: shake 0.8s ease-in-out;
-        }
+        .animate-shake { animation: shake 0.8s ease-in-out; }
       `}</style>
     </section>
   );
