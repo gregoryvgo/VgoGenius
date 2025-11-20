@@ -48,12 +48,44 @@ export default function TimokatalogosClient() {
           SEO, ασφαλές hosting και εύκολη διαχείριση.
         </p>
 
+        {/* First row: OnePager, Βασικό, Επαγγελματικό (3 columns on md+) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 text-center">
+          {/* ⭐ OnePager */}
           <div className="bg-black border border-[#2d2d2d] rounded-2xl p-6 md:p-8 shadow-[0_0_30px_rgba(226,132,26,0.3)] hover:shadow-[0_0_50px_rgba(226,132,26,0.6)] transition-transform hover:scale-105">
+            <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4">
+              OnePager
+            </h3>
+            <p className="text-3xl md:text-4xl font-bold mb-6 text-white">250 €</p>
+            <ul className="text-gray-300 text-left space-y-2">
+              <li>• 1 σελίδα</li>
+              <li>• Responsive design (κινητά & tablet)</li>
+              <li>• Σύνδεση με social media</li>
+              <li>• Βασικό SEO (τίτλοι, περιγραφές, alt text)</li>
+            </ul>
+          </div>
+
+          {/* 🔥 Βασικό - HOT SALE */}
+          <div className="relative bg-black border border-[#ff9d00] rounded-2xl p-6 md:p-8 shadow-[0_0_40px_rgba(255,120,0,0.6)] hover:shadow-[0_0_60px_rgba(255,150,0,0.9)] transition-transform hover:scale-105">
+            {/* Hot Sale Label */}
+            <span className="absolute top-3 left-4 text-[12px] text-[#ffb347] italic tracking-wide">
+              hot sale 🔥
+            </span>
+
             <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4">
               Βασικό
             </h3>
-            <p className="text-3xl md:text-4xl font-bold mb-6 text-white">450 €</p>
+
+            {/* Prices */}
+            <div className="flex flex-col items-center mb-6">
+              <span className="text-sm text-gray-400 line-through italic self-start ml-2 mb-1">
+                450 €
+              </span>
+
+              <span className="text-3xl md:text-4xl font-bold text-white">
+                349 €
+              </span>
+            </div>
+
             <ul className="text-gray-300 text-left space-y-2">
               <li>• Έως 4 σελίδες (Αρχική, Υπηρεσίες, Εταιρεία, Επικοινωνία)</li>
               <li>• Responsive design (κινητά & tablet)</li>
@@ -62,6 +94,7 @@ export default function TimokatalogosClient() {
             </ul>
           </div>
 
+          {/* Επαγγελματικό */}
           <div className="bg-black border border-[#2d2d2d] rounded-2xl p-6 md:p-8 shadow-[0_0_40px_rgba(226,132,26,0.4)] hover:shadow-[0_0_60px_rgba(226,132,26,0.7)] transition-transform hover:scale-105">
             <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4">
               Επαγγελματικό
@@ -74,12 +107,15 @@ export default function TimokatalogosClient() {
               <li>• Δυνατότητα μελλοντικών επεκτάσεων</li>
             </ul>
           </div>
+        </div>
 
-          <div className="bg-black border border-[#2d2d2d] rounded-2xl p-6 md:p-8 shadow-[0_0_50px_rgba(226,132,26,0.5)] hover:shadow-[0_0_70px_rgba(226,132,26,0.8)] transition-transform hover:scale-105">
-            <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4">
+        {/* Premium centered on its own row */}
+        <div className="w-full mt-10 flex justify-center">
+          <div className="w-full max-w-lg bg-black border border-[#2d2d2d] rounded-2xl p-6 md:p-8 shadow-[0_0_50px_rgba(226,132,26,0.5)] hover:shadow-[0_0_70px_rgba(226,132,26,0.8)] transition-transform hover:scale-105">
+            <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4 text-center">
               Premium
             </h3>
-            <p className="text-3xl md:text-4xl font-bold mb-6 text-white">890 €</p>
+            <p className="text-3xl md:text-4xl font-bold mb-6 text-white text-center">890 €</p>
             <ul className="text-gray-300 text-left space-y-2">
               <li>• Έως 10 σελίδες</li>
               <li>• Πλήρες SEO + Στρατηγική περιεχομένου (άρθρα, keywords)</li>
@@ -103,6 +139,7 @@ export default function TimokatalogosClient() {
       </div>
 
       <style jsx global>{`
+        /* ----------- SHAKE ----------- */
         @keyframes shake {
           0% { transform: translate(0, 0) rotate(0deg); }
           20% { transform: translate(-5px, 3px) rotate(-1deg); }
@@ -111,7 +148,20 @@ export default function TimokatalogosClient() {
           80% { transform: translate(4px, -2px) rotate(1deg); }
           100% { transform: translate(0, 0) rotate(0deg); }
         }
-        .animate-shake { animation: shake 0.8s ease-in-out; }
+        .animate-shake {
+          animation: shake 0.8s ease-in-out;
+        }
+
+        /* Subtle pulse for the main container shadow */
+        @keyframes fireGlowPulse {
+          0% { box-shadow: 0 0 25px rgba(226,132,26,0.12); }
+          50% { box-shadow: 0 0 45px rgba(226,132,26,0.18); }
+          100% { box-shadow: 0 0 25px rgba(226,132,26,0.12); }
+        }
+
+        .shadow-[0_0_50px_rgba(226,132,26,0.4)] {
+          animation: fireGlowPulse 3s infinite ease-in-out;
+        }
       `}</style>
     </section>
   );
