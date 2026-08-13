@@ -1,11 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function CookieConsent() {
   const [accepted, setAccepted] = useState(false);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Διαβάζουμε το localStorage ΜΟΝΟ αφού το component γίνει mount στον client
     const stored = localStorage.getItem("cookiesAccepted");
     if (stored === "true" || stored === "false") {
       setAccepted(true);
@@ -15,6 +17,7 @@ export default function CookieConsent() {
     }
   }, []); 
 
+  // Αφαιρέθηκε το ": boolean" για να είναι συμβατό με JavaScript (.jsx)
   const handleChoice = (choice) => {
     localStorage.setItem("cookiesAccepted", choice ? "true" : "false");
     setAccepted(true);
@@ -27,14 +30,20 @@ export default function CookieConsent() {
       <p className="text-sm md:text-base text-gray-300 text-center leading-relaxed max-w-3xl">
         Χρησιμοποιούμε cookies για να εξασφαλίσουμε την ομαλή λειτουργία του
         ιστότοπου, να βελτιώσουμε την εμπειρία χρήσης και να αναλύουμε την
-        επισκεψιμότητα για συνεχή βελτίωση των υπηρεσιών μας.
+        επισκεψιμότητα. Διαβάστε περισσότερα στην{" "}
+        <Link 
+          href="/privacy" 
+          className="text-[#e2841a] underline hover:text-white transition font-medium"
+        >
+          Πολιτική Απορρήτου
+        </Link>
+        .
       </p>
 
       <div className="flex space-x-4">
         <button
           onClick={() => handleChoice(true)}
-          className="bg-[#e2841a] text-black font-semibold px-6 py-2 rounded-full 
-             hover:text-white transition"
+          className="bg-[#e2841a] text-black font-semibold px-6 py-2 rounded-full hover:text-white transition"
         >
           Αποδοχή
         </button>

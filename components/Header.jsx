@@ -28,8 +28,9 @@ export default function Header() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  // Αλλαγή ΜΟΝΟ στη γραμματοσειρά (Tech/Professional typography)
   const baseLink =
-    "relative px-3 py-[6px] font-medium text-xl transition-colors";
+    "relative px-3 py-[6px] font-semibold text-sm tracking-widest uppercase transition-colors";
   const hoverLine = `
     before:content-[''] before:absolute before:left-1/2 before:bottom-0
     before:h-[2px] before:w-0 before:bg-[#e2841a]
@@ -80,19 +81,19 @@ export default function Header() {
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-black border border-[#333] shadow-lg rounded-md py-2 w-48 text-center">
                   <Link
                     href="/perissotera/ofeli-website"
-                    className={`relative block py-2 ${hoverLine} hover:text-[#e2841a]`}
+                    className={`relative block py-2 font-semibold text-xs tracking-wider uppercase ${hoverLine} hover:text-[#e2841a]`}
                   >
                     Ωφέλη Website
                   </Link>
                   <Link
                     href="/perissotera/orismoi"
-                    className={`relative block py-2 ${hoverLine} hover:text-[#e2841a]`}
+                    className={`relative block py-2 font-semibold text-xs tracking-wider uppercase ${hoverLine} hover:text-[#e2841a]`}
                   >
                     Ορισμοί
                   </Link>
                   <Link
                     href="/perissotera/giati-emas"
-                    className={`relative block py-2 ${hoverLine} hover:text-[#e2841a]`}
+                    className={`relative block py-2 font-semibold text-xs tracking-wider uppercase ${hoverLine} hover:text-[#e2841a]`}
                   >
                     Γιατί Εμάς
                   </Link>
@@ -116,7 +117,7 @@ export default function Header() {
       </header>
 
       <div
-        className={`fixed top-0 left-0 h-full w-[200px] bg-black border-r border-[#333] z-[10000] pt-24 px-6 flex flex-col gap-6 text-lg transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-[200px] bg-black border-r border-[#333] z-[10000] pt-24 px-6 flex flex-col gap-6 text-sm font-semibold tracking-wider uppercase transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -128,21 +129,21 @@ export default function Header() {
           <Link
             href="/perissotera/ofeli-website"
             onClick={closeMenu}
-            className={`${hoverLine} py-1 hover:text-[#e2841a]`}
+            className={`${hoverLine} py-1 hover:text-[#e2841a] text-xs font-semibold tracking-wider uppercase`}
           >
             Ωφέλη Website
           </Link>
           <Link
             href="/perissotera/orismoi"
             onClick={closeMenu}
-            className={`${hoverLine} py-1 hover:text-[#e2841a]`}
+            className={`${hoverLine} py-1 hover:text-[#e2841a] text-xs font-semibold tracking-wider uppercase`}
           >
             Ορισμοί
           </Link>
           <Link
             href="/perissotera/giati-emas"
             onClick={closeMenu}
-            className={`${hoverLine} py-1 hover:text-[#e2841a]`}
+            className={`${hoverLine} py-1 hover:text-[#e2841a] text-xs font-semibold tracking-wider uppercase`}
           >
             Γιατί Εμάς
           </Link>

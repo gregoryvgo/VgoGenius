@@ -1,11 +1,50 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+
+// Λίστα με τις λεπτομέρειες των πακέτων
+const packageDetails = {
+  OnePager: `Επιθυμώ την δημιουργία ενός website OnePager με 250 €:
+• 1 σελίδα
+• Responsive design (κινητά & tablet)
+• Σύνδεση με social media
+• Βασικό SEO (τίτλοι, περιγραφές, alt text)`,
+
+  Βασικό: `Επιθυμώ την δημιουργία ενός website Βασικό με 349 €:
+• Έως 4 σελίδες (Αρχική, Υπηρεσίες, Εταιρεία, Επικοινωνία)
+• Responsive design (κινητά & tablet)
+• Σύνδεση με social media
+• Βασικό SEO (τίτλοι, περιγραφές, alt text)`,
+
+  Επαγγελματικό: `Επιθυμώ την δημιουργία ενός website Επαγγελματικό με 690 €:
+• Έως 6 σελίδες (περιλαμβάνει gallery & blog)
+• Προηγμένο SEO (λέξεις-κλειδιά, Google Business, Analytics)
+• Εγκατάσταση SSL (https)
+• Δυνατότητα μελλοντικών επεκτάσεων`,
+
+  Premium: `Επιθυμώ την δημιουργία ενός website Premium με 890 €:
+• Έως 10 σελίδες
+• Πλήρες SEO + Στρατηγική περιεχομένου (άρθρα, keywords)
+• White-label παρουσίαση (με δικό σας brand)
+• Συνεχές SEO/Marketing (150–300 €/μήνα, προαιρετικά)`,
+};
 
 export default function EpikoinoniaClient() {
   const [status, setStatus] = useState("");
+  const [message, setMessage] = useState("");
+  const searchParams = useSearchParams();
 
+  // 1. Διάβασμα παραμέτρου package από το URL
+  useEffect(() => {
+    const selectedPackage = searchParams.get("package");
+    if (selectedPackage && packageDetails[selectedPackage]) {
+      setMessage(packageDetails[selectedPackage]);
+    }
+  }, [searchParams]);
+
+  // 2. Intersection Observer για τα fade-in animations
   useEffect(() => {
     const fadeEls = document.querySelectorAll(".fade-in");
     const observer = new IntersectionObserver(
@@ -37,6 +76,7 @@ export default function EpikoinoniaClient() {
     if (res.ok) {
       setStatus("success");
       form.reset();
+      setMessage(""); // Καθαρισμός του state μηνύματος
     } else {
       setStatus("error");
     }
@@ -86,6 +126,8 @@ export default function EpikoinoniaClient() {
                 <textarea
                   name="message"
                   rows="7"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   placeholder="Το μήνυμά σας"
                   required
                   className="border border-[#e2841a] rounded-lg p-3 md:p-4 text-sm md:text-lg bg-black/80 text-white focus:outline-none focus:ring-2 focus:ring-[#e2841a] transition-all"
