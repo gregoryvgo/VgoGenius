@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { generatePageMeta } from "@/lib/seo";
 import EpikoinoniaClient from "@/components/EpikoinoniaClient";
 
@@ -14,5 +15,9 @@ export const metadata = generatePageMeta({
 });
 
 export default function Epikoinonia() {
-  return <EpikoinoniaClient />;
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-black text-white flex items-center justify-center">Φόρτωση...</div>}>
+      <EpikoinoniaClient />
+    </Suspense>
+  );
 }

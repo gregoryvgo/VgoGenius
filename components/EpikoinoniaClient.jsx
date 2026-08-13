@@ -36,7 +36,7 @@ export default function EpikoinoniaClient() {
   const [message, setMessage] = useState("");
   const searchParams = useSearchParams();
 
-  // 1. Διάβασμα παραμέτρου package από το URL
+  // Διάβασμα παραμέτρου package από το URL
   useEffect(() => {
     const selectedPackage = searchParams.get("package");
     if (selectedPackage && packageDetails[selectedPackage]) {
@@ -44,7 +44,7 @@ export default function EpikoinoniaClient() {
     }
   }, [searchParams]);
 
-  // 2. Intersection Observer για τα fade-in animations
+  // Intersection Observer για τα fade-in animations
   useEffect(() => {
     const fadeEls = document.querySelectorAll(".fade-in");
     const observer = new IntersectionObserver(
