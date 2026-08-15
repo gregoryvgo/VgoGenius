@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 // Λίστα με τις λεπτομέρειες των πακέτων
@@ -99,8 +100,8 @@ export default function EpikoinoniaClient() {
           {/* Φόρμα με Formspree */}
           <div className="w-full">
             {status === "success" ? (
-              <p className="text-green-400 text-center">
-                Το μήνυμά σας στάλθηκε. Θα επικοινωνήσουμε σύντομα.
+              <p className="text-green-400 text-center font-medium py-4">
+                Το μήνυμά σας στάλθηκε επιτυχώς! Θα επικοινωνήσουμε σύντομα μαζί σας.
               </p>
             ) : (
               <form
@@ -132,6 +133,28 @@ export default function EpikoinoniaClient() {
                   required
                   className="border border-[#e2841a] rounded-lg p-3 md:p-4 text-sm md:text-lg bg-black/80 text-white focus:outline-none focus:ring-2 focus:ring-[#e2841a] transition-all"
                 ></textarea>
+
+                {/* Υποχρεωτικό Checkbox GDPR */}
+                <div className="flex items-start gap-3 select-none text-left my-1">
+                  <input
+                    type="checkbox"
+                    id="gdpr-consent-epikoinonia"
+                    name="gdpr_consent"
+                    required
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-gray-600 bg-black/80 text-[#e2841a] accent-[#e2841a] focus:ring-[#e2841a] cursor-pointer"
+                  />
+                  <label htmlFor="gdpr-consent-epikoinonia" className="text-xs sm:text-sm text-gray-300 leading-relaxed cursor-pointer">
+                    Έχω διαβάσει και αποδέχομαι την{" "}
+                    <Link
+                      href="/privacy"
+                      target="_blank"
+                      className="font-semibold text-[#e2841a] underline hover:text-[#ff9d33] transition-colors"
+                    >
+                      Πολιτική Απορρήτου & GDPR
+                    </Link>
+                    . Συναινώ στην επεξεργασία των στοιχείων μου αποκλειστικά για την εξυπηρέτηση του αιτήματός μου.
+                  </label>
+                </div>
 
                 <button
                   type="submit"

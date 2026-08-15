@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ContactForm() {
   const [status, setStatus] = useState("");
@@ -36,8 +37,8 @@ export default function ContactForm() {
         </p>
 
         {status === "success" ? (
-          <p className="text-green-400 text-center">
-            Το μήνυμά σας στάλθηκε. Θα επικοινωνήσουμε σύντομα.
+          <p className="text-green-400 text-center font-medium py-4">
+            Το μήνυμά σας στάλθηκε επιτυχώς! Θα επικοινωνήσουμε σύντομα μαζί σας.
           </p>
         ) : (
           <form
@@ -70,6 +71,28 @@ export default function ContactForm() {
               required
               className="w-full border border-[#e2841a] rounded-lg p-3 bg-black/50 text-white focus:outline-none focus:ring-2 focus:ring-[#e2841a] transition-all md:col-span-2"
             ></textarea>
+
+            {/* Υποχρεωτικό Checkbox GDPR */}
+            <div className="col-span-1 md:col-span-2 my-2 flex items-start gap-3 select-none">
+              <input
+                type="checkbox"
+                id="gdpr-consent"
+                name="gdpr_consent"
+                required
+                className="mt-1 h-4 w-4 shrink-0 rounded border-gray-600 bg-black/50 text-[#e2841a] accent-[#e2841a] focus:ring-[#e2841a] cursor-pointer"
+              />
+              <label htmlFor="gdpr-consent" className="text-xs sm:text-sm text-gray-300 leading-relaxed cursor-pointer">
+                Έχω διαβάσει και αποδέχομαι την{" "}
+                <Link
+                  href="/privacy"
+                  target="_blank"
+                  className="font-semibold text-[#e2841a] underline hover:text-[#ff9d33] transition-colors"
+                >
+                  Πολιτική Απορρήτου & Προστασίας Δεδομένων
+                </Link>
+                . Συναινώ στην επεξεργασία των στοιχείων μου αποκλειστικά για την εξυπηρέτηση του αιτήματός μου.
+              </label>
+            </div>
 
             <div className="col-span-1 md:col-span-2 flex justify-center">
               <button
