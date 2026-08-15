@@ -105,6 +105,11 @@ export default function Header() {
               Τιμοκατάλογος
             </Link>
 
+            {/* ΝΕΟ LINK: Demos */}
+            <Link href="/demos" className={`${baseLink} ${hoverLine}`}>
+              Demos
+            </Link>
+
             <Link href="/etaireia" className={`${baseLink} ${hoverLine}`}>
               Εταιρεία
             </Link>
@@ -155,6 +160,15 @@ export default function Header() {
           className={`${baseLink} ${hoverLine}`}
         >
           Τιμοκατάλογος
+        </Link>
+
+        {/* ΝΕΟ LINK: Demos στο Mobile Menu */}
+        <Link
+          href="/demos"
+          onClick={closeMenu}
+          className={`${baseLink} ${hoverLine}`}
+        >
+          Demos
         </Link>
 
         <Link
