@@ -25,7 +25,7 @@ export default function EtairiaClient() {
             leading-snug break-words hyphens-auto max-w-full mx-auto
           "
         >
-          Δημιουργία με Αξιοπιστία και Όραμα
+          Αξιοπιστία και Όραμα
         </h2>
 
         <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">

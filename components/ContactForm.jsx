@@ -33,7 +33,7 @@ export default function ContactForm() {
         </h2>
 
         <p className="text-gray-300 mb-10 text-base md:text-lg leading-relaxed">
-          Συμπληρώστε τη φόρμα και θα επικοινωνήσουμε μαζί σας το συντομότερο.
+          Συμπληρώστε τη φόρμα και θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατόν.
         </p>
 
         {status === "success" ? (

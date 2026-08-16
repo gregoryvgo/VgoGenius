@@ -30,7 +30,7 @@ export default function GiatiEmas() {
             leading-tight break-words hyphens-auto max-w-full mx-auto
           "
         >
-          Γιατί Εμάς
+          Γιατί Εμάς;
         </h1>
 
         <p className="mb-6 text-gray-300 indent-6">

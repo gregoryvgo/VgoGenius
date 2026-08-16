@@ -95,14 +95,14 @@ export default function Header() {
                     href="/perissotera/giati-emas"
                     className={`relative block py-2 font-semibold text-xs tracking-wider uppercase ${hoverLine} hover:text-[#e2841a]`}
                   >
-                    Γιατί Εμάς
+                    Γιατί Εμάς ;
                   </Link>
                 </div>
               )}
             </div>
 
             <Link href="/timokatalogos" className={`${baseLink} ${hoverLine}`}>
-              Τιμοκατάλογος
+              Πακέτα
             </Link>
 
             {/* ΝΕΟ LINK: Demos */}
@@ -150,7 +150,7 @@ export default function Header() {
             onClick={closeMenu}
             className={`${hoverLine} py-1 hover:text-[#e2841a] text-xs font-semibold tracking-wider uppercase`}
           >
-            Γιατί Εμάς
+            Γιατί Εμάς ;
           </Link>
         </div>
 
@@ -159,7 +159,7 @@ export default function Header() {
           onClick={closeMenu}
           className={`${baseLink} ${hoverLine}`}
         >
-          Τιμοκατάλογος
+          Πακέτα
         </Link>
 
         {/* ΝΕΟ LINK: Demos στο Mobile Menu */}

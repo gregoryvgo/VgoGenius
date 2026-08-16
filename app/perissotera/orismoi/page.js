@@ -3,13 +3,14 @@ import { generatePageMeta } from "@/lib/seo";
 
 // SEO metadata for this page
 export const metadata = generatePageMeta({
-  title: "Επεξήγηση Ορισμών",
+  title: "Βασικά Εργαλεία",
   description:
     "Μάθετε τι σημαίνουν βασικοί όροι όπως Hosting, Domain, SEO, Cookies, CMS, Responsive Design και SSL — απαραίτητες γνώσεις για κάθε website.",
   path: "/perissotera/orismoi",
   keywords: [
     "VgoGenius",
     "ορισμοί website",
+    "βασικά εργαλεία",
     "hosting",
     "domain name",
     "seo",
@@ -34,7 +35,7 @@ export default function OrismoiPage() {
             leading-tight break-words hyphens-auto max-w-full mx-auto
           "
         >
-          Επεξήγηση Ορισμών
+          Βασικά Εργαλεία
         </h1>
 
         <p className="mb-6 text-gray-300 indent-6">

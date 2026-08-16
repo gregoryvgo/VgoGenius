@@ -45,7 +45,7 @@ export default function Hero() {
         </div>
 
         {/* ===== Κείμενο ===== */}
-        <p className="max-w-xl mx-auto text-lg md:text-xl text-gray-200 leading-relaxed mb-8">
+        <p className="max-w-xl mx-auto text-lg md:text-xl text-white leading-relaxed mb-8">
           Επαγγελματικός σχεδιασμός και ανάπτυξη ιστοσελίδων.
           <br />
           Δημιουργούμε ψηφιακές πλατφόρμες που ξεχωρίζουν.
