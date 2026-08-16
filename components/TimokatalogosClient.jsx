@@ -28,7 +28,7 @@ export default function TimokatalogosClient() {
             leading-tight break-words hyphens-auto max-w-full mx-auto
           "
         >
-          Τιμοκατάλογος
+        Πακέτα Κατασκευής Ιστοσελίδας
         </h1>
 
         <h2
