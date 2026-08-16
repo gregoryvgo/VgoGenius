@@ -38,7 +38,7 @@ export default function TimokatalogosClient() {
             leading-snug break-words hyphens-auto max-w-full mx-auto
           "
         >
-          Προσφορά Κατασκευής Ιστοσελίδας
+          Προσφορές για κάθε ανάγκη
         </h2>
 
         <p className="text-gray-300 mb-10 indent-6">
