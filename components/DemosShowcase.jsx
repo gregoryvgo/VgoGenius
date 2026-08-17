@@ -59,6 +59,18 @@ const demosData = [
     features: ["Online Booking", "Τιμοκατάλογος", "Lookbook Gallery"],
   },
   {
+    id: "wedding-invitation",
+    title: "Digital Wedding Invitation & RSVP",
+    category: "services",
+    categoryLabel: "Events & Γάμος",
+    tag: "Next.js",
+    description:
+      "Κομψό ψηφιακό προσκλητήριο γάμου με αντίστροφη μέτρηση, online RSVP φόρμα, χάρτη τοποθεσίας και πρόγραμμα δεξίωσης.",
+    image: "/images/demos/wedding-invitation.webp",
+    demoUrl: "https://wedding.vgogenius.gr",
+    features: ["Online RSVP", "Live Countdown", "Google Maps", "Timeline"],
+  },
+  {
     id: "astro-anthopoleio",
     title: "Boutique Ανθοπωλείο (Astro)",
     category: "commerce",
