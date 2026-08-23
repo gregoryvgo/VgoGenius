@@ -9,19 +9,8 @@ const categories = [
   { label: "Εκπαίδευση & Portfolios", value: "education" },
 ];
 
+// Η νέα σειρά που ζήτησες!
 const demosData = [
-  {
-    id: "cv-portfolio",
-    title: "Executive Interactive CV",
-    category: "education",
-    categoryLabel: "Personal Branding / CV",
-    tag: "Astro + Tailwind",
-    description:
-      "Διαδραστικό βιογραφικό υψηλών επιδόσεων με live KPI drawers, dynamic filters και εξαγωγή σε καθαρό PDF.",
-    image: "/images/demos/cv-portfolio.webp",
-    demoUrl: "https://cv.vgogenius.gr",
-    features: ["Instant PDF Export", "KPI Drawer", "Ultra Fast (Astro)", "Mobile QR"],
-  },
   {
     id: "iatreio",
     title: "Medical & Dental Clinic",
@@ -35,21 +24,21 @@ const demosData = [
     features: ["Online Ραντεβού", "Παρουσίαση Θεραπειών", "SEO Optimized"],
   },
   {
-    id: "ydraylikos",
-    title: "Τεχνικές Υπηρεσίες & Υδραυλικός",
-    category: "services",
-    categoryLabel: "Τεχνικά Επαγγέλματα",
+    id: "sxoli-xorou",
+    title: "Dance Academy & Studio",
+    category: "education",
+    categoryLabel: "Εκπαίδευση & Δραστηριότητες",
     tag: "TypeScript",
     description:
-      "Landing page άμεσης ανάγκης με έμφαση στις κλήσεις 24/7, κάλυψη περιοχών και αξιολογήσεις πελατών.",
-    image: "/images/demos/ydraylikos.webp",
-    demoUrl: "https://ydraylikos.vgogenius.gr",
-    features: ["Click-to-Call 24/7", "Περιοχές Εξυπηρέτησης", "Γρήγορη Φόρτωση"],
+      "Δυναμικό site σχολής χορού με εβδομαδιαίο πρόγραμμα μαθημάτων, καθηγητές και εγγραφή σε δοκιμαστικό.",
+    image: "/images/demos/sxoli-xorou.webp",
+    demoUrl: "https://sxoli-xorou.vgogenius.gr",
+    features: ["Εβδομαδιαίο Πρόγραμμα", "Εγγραφή Δοκιμαστικού", "Video Showcase"],
   },
   {
     id: "koureio",
     title: "Modern Barbershop & Grooming",
-    category: "services",
+    category: "commerce",
     categoryLabel: "Ομορφιά & Περιποίηση",
     tag: "JavaScript",
     description:
@@ -57,18 +46,6 @@ const demosData = [
     image: "/images/demos/koureio.webp",
     demoUrl: "https://koureio.vgogenius.gr",
     features: ["Online Booking", "Τιμοκατάλογος", "Lookbook Gallery"],
-  },
-  {
-    id: "wedding-invitation",
-    title: "Digital Wedding Invitation & RSVP",
-    category: "services",
-    categoryLabel: "Events & Γάμος",
-    tag: "Next.js",
-    description:
-      "Κομψό ψηφιακό προσκλητήριο γάμου με αντίστροφη μέτρηση, online RSVP φόρμα, χάρτη τοποθεσίας και πρόγραμμα δεξίωσης.",
-    image: "/images/demos/wedding-invitation.webp",
-    demoUrl: "https://wedding.vgogenius.gr",
-    features: ["Online RSVP", "Live Countdown", "Google Maps", "Timeline"],
   },
   {
     id: "astro-anthopoleio",
@@ -95,16 +72,40 @@ const demosData = [
     features: ["Interactive Cart", "Custom Checkouts", "Filter ανά Περίσταση"],
   },
   {
-    id: "sxoli-xorou",
-    title: "Dance Academy & Studio",
-    category: "education",
-    categoryLabel: "Εκπαίδευση & Δραστηριότητες",
+    id: "ydraylikos",
+    title: "Τεχνικές Υπηρεσίες & Υδραυλικός",
+    category: "services",
+    categoryLabel: "Τεχνικά Επαγγέλματα",
     tag: "TypeScript",
     description:
-      "Δυναμικό site σχολής χορού με εβδομαδιαίο πρόγραμμα μαθημάτων, καθηγητές και εγγραφή σε δοκιμαστικό.",
-    image: "/images/demos/sxoli-xorou.webp",
-    demoUrl: "https://sxoli-xorou.vgogenius.gr",
-    features: ["Εβδομαδιαίο Πρόγραμμα", "Εγγραφή Δοκιμαστικού", "Video Showcase"],
+      "Landing page άμεσης ανάγκης με έμφαση στις κλήσεις 24/7, κάλυψη περιοχών και αξιολογήσεις πελατών.",
+    image: "/images/demos/ydraylikos.webp",
+    demoUrl: "https://ydraylikos.vgogenius.gr",
+    features: ["Click-to-Call 24/7", "Περιοχές Εξυπηρέτησης", "Γρήγορη Φόρτωση"],
+  },
+  {
+    id: "wedding-invitation",
+    title: "Digital Wedding Invitation & RSVP",
+    category: "services",
+    categoryLabel: "Events & Γάμος",
+    tag: "Next.js",
+    description:
+      "Κομψό ψηφιακό προσκλητήριο γάμου με αντίστροφη μέτρηση, online RSVP φόρμα, χάρτη τοποθεσίας και πρόγραμμα δεξίωσης.",
+    image: "/images/demos/wedding-invitation.webp",
+    demoUrl: "https://wedding.vgogenius.gr",
+    features: ["Online RSVP", "Live Countdown", "Google Maps", "Timeline"],
+  },
+  {
+    id: "cv-portfolio",
+    title: "Executive Interactive CV",
+    category: "education",
+    categoryLabel: "Personal Branding / CV",
+    tag: "Astro + Tailwind",
+    description:
+      "Διαδραστικό βιογραφικό υψηλών επιδόσεων με live KPI drawers, dynamic filters και εξαγωγή σε καθαρό PDF.",
+    image: "/images/demos/cv-portfolio.webp",
+    demoUrl: "https://cv.vgogenius.gr",
+    features: ["Instant PDF Export", "KPI Drawer", "Ultra Fast (Astro)", "Mobile QR"],
   },
 ];
 
@@ -148,12 +149,15 @@ export default function DemosShowcase() {
         ))}
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredDemos.map((demo) => (
+      {/* Grid: Χρησιμοποιούμε 6-στηλο layout (lg:grid-cols-6) για να κεντράρουμε τις 2 τελευταίες κάρτες */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        {filteredDemos.map((demo, index) => (
           <div
             key={demo.id}
-            className="group rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-[#e2841a]/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(226,132,26,0.15)]"
+            className={`group rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-[#e2841a]/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(226,132,26,0.15)] 
+              lg:col-span-2 
+              ${activeTab === "all" && index === 6 ? "lg:col-start-2" : ""}
+            `}
           >
             {/* Image Preview Box */}
             <div className="relative aspect-video overflow-hidden bg-neutral-900">

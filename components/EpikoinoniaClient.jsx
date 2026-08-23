@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image"; 
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 // Λίστα με τις λεπτομέρειες των πακέτων
@@ -95,7 +96,8 @@ export default function EpikoinoniaClient() {
           Επικοινωνήστε μαζί μας για να συζητήσουμε πώς μπορούμε να εξελίξουμε τη δική σας ψηφιακή παρουσία.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1.3fr_0.7fr] gap-10 md:gap-16 items-center">
+        {/* ΑΛΛΑΓΗ 1: Το items-center έγινε items-start για να είναι φόρμα και logo στην ίδια ευθεία πάνω */}
+        <div className="grid grid-cols-1 md:grid-cols-[1.3fr_0.7fr] gap-10 md:gap-16 items-start">
 
           {/* Φόρμα με Formspree */}
           <div className="w-full">
@@ -175,8 +177,21 @@ export default function EpikoinoniaClient() {
             )}
           </div>
 
-          {/* Στοιχεία επικοινωνίας */}
-          <div className="flex flex-col justify-center h-full text-left space-y-6 md:pl-8">
+          {/* Στοιχεία επικοινωνίας & Logo */}
+          <div className="flex flex-col justify-start h-full text-left space-y-6 md:pl-8 pt-4 md:pt-0">
+            
+            {/* ΑΛΛΑΓΗ 2: flex justify-center για το κινητό, md:justify-start για τον υπολογιστή */}
+            <div className="mb-2 flex justify-center md:justify-start w-full">
+              <Image
+                src="/images/logo.webp"
+                alt="VgoGenius Logo"
+                width={220}
+                height={220}
+                className="w-44 md:w-52 opacity-90 drop-shadow-[0_0_15px_rgba(226,132,26,0.4)]"
+                loading="lazy"
+              />
+            </div>
+
             <div>
               <p className="text-base md:text-xl mb-3">
                 <strong className="text-[#e2841a]">Τηλέφωνο:</strong>

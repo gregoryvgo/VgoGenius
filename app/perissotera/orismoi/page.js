@@ -1,11 +1,13 @@
 // app/perissotera/orismoi/page.tsx
 import { generatePageMeta } from "@/lib/seo";
+import Link from "next/link";
+import { Server, Globe, Search, Cookie, MonitorSmartphone, ShieldCheck } from "lucide-react";
 
 // SEO metadata for this page
 export const metadata = generatePageMeta({
   title: "Βασικά Εργαλεία",
   description:
-    "Μάθετε τι σημαίνουν βασικοί όροι όπως Hosting, Domain, SEO, Cookies, CMS, Responsive Design και SSL — απαραίτητες γνώσεις για κάθε website.",
+    "Μάθετε τι σημαίνουν βασικοί όροι όπως Hosting, Domain, SEO, Cookies, Responsive Design και SSL — απαραίτητες γνώσεις για κάθε website.",
   path: "/perissotera/orismoi",
   keywords: [
     "VgoGenius",
@@ -15,91 +17,88 @@ export const metadata = generatePageMeta({
     "domain name",
     "seo",
     "cookies",
-    "cms",
     "responsive design",
     "ssl",
   ],
 });
 
+// Δεδομένα για τις κάρτες 
+const definitions = [
+  {
+    title: "Hosting",
+    desc: "Η υπηρεσία που φιλοξενεί τα αρχεία του website (κώδικας, εικόνες, βάσεις δεδομένων) σε έναν server, ώστε να μπορεί ο κόσμος να το βλέπει στο διαδίκτυο. Ως πραγματικό παράδειγμα, μπορεί να παραλληλιστεί με το ενοίκιο ενός διαμερίσματος ή κτιρίου· απλώς στη δική μας περίπτωση υπάρχει σε ηλεκτρονική μορφή.",
+    icon: <Server className="w-8 h-8 text-[#e2841a] mb-4" />,
+  },
+  {
+    title: "Domain Name",
+    desc: "Το μοναδικό όνομα (π.χ. mysite.com) που χρησιμοποιεί ένα website. Είναι ξεχωριστό κόστος και χρειάζεται ανανέωση κάθε χρόνο. Ακόμα κι αν το hosting σταματήσει (δηλαδή πάψει να εμφανίζεται δημόσια το website), το domain πρέπει να πληρώνεται προκειμένου να μην χαθεί, ειδικά αν σε ενδιαφέρει για μελλοντική χρήση.",
+    icon: <Globe className="w-8 h-8 text-[#e2841a] mb-4" />,
+  },
+  {
+    title: "SEO (Search Engine Optimization)",
+    desc: "Η διαδικασία που χρησιμοποιείται για να βελτιωθεί η θέση ενός website στα αποτελέσματα αναζήτησης (π.χ. Google, Bing) όταν κάποιος ψάχνει κάτι σχετικό με το συγκεκριμένο site. Ένα καλό SEO αυξάνει την επισκεψιμότητα και την αξιοπιστία της επιχείρησης.",
+    icon: <Search className="w-8 h-8 text-[#e2841a] mb-4" />,
+  },
+  {
+    title: "Cookies",
+    desc: "Μικρά αρχεία που αποθηκεύονται στον υπολογιστή ή στο κινητό σου όταν επισκέπτεσαι μια ιστοσελίδα. Χρησιμοποιούνται για να κάνουν την εμπειρία στο διαδίκτυο πιο προσωποποιημένη και αποτελεσματική.",
+    icon: <Cookie className="w-8 h-8 text-[#e2841a] mb-4" />,
+  },
+  {
+    title: "Responsive Design",
+    desc: "Ο τρόπος σχεδίασης ενός website ώστε να προσαρμόζεται αυτόματα σε κάθε συσκευή — κινητό, tablet ή υπολογιστή — διασφαλίζοντας άνετη πλοήγηση παντού.",
+    icon: <MonitorSmartphone className="w-8 h-8 text-[#e2841a] mb-4" />,
+  },
+  {
+    title: "SSL Certificate",
+    desc: "Το πιστοποιητικό ασφαλείας που εξασφαλίζει ότι η σύνδεση μεταξύ του επισκέπτη και του website είναι κρυπτογραφημένη και ασφαλής. Είναι απαραίτητο για την προστασία δεδομένων και ενισχύει την αξιοπιστία και το SEO του website.",
+    icon: <ShieldCheck className="w-8 h-8 text-[#e2841a] mb-4" />,
+  },
+];
+
 export default function OrismoiPage() {
   return (
-    <section
-      lang="el"
-      className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 sm:px-6 py-28 sm:py-36 overflow-x-hidden"
-    >
-      <div className="w-full max-w-4xl bg-black/60 border border-[#2d2d2d] rounded-3xl shadow-[0_0_40px_rgba(226,132,26,0.3)] p-6 sm:p-12 text-left leading-relaxed backdrop-blur-md">
-        <h1
-          className="
-            text-lg sm:text-2xl md:text-4xl
-            font-bold text-center mb-10 text-[#e2841a]
-            leading-tight break-words hyphens-auto max-w-full mx-auto
-          "
-        >
+    <section className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 sm:px-6 py-28 overflow-x-hidden relative">
+      
+      {/* Κεντρικό Κείμενο */}
+      <div className="w-full max-w-5xl text-center mb-16">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-[#e2841a] leading-tight">
           Βασικά Εργαλεία
         </h1>
-
-        <p className="mb-6 text-gray-300 indent-6">
-          Για να κατανοήσει κάποιος σωστά τη διαδικασία δημιουργίας ενός website,
-          είναι σημαντικό να γνωρίζει ορισμένους βασικούς όρους που
-          χρησιμοποιούνται σε κάθε στάδιο της ανάπτυξης και λειτουργίας του.
+        <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          Για να κατανοήσει κάποιος σωστά τη διαδικασία δημιουργίας ενός website, είναι σημαντικό να γνωρίζει ορισμένους βασικούς όρους που χρησιμοποιούνται σε κάθε στάδιο της ανάπτυξης και λειτουργίας του.
         </p>
+      </div>
 
-        <ul className="list-disc list-inside space-y-6 text-gray-300">
-          <li>
-            <strong className="text-[#e2841a]">Hosting:</strong> Η υπηρεσία που
-            φιλοξενεί τα αρχεία του website (κώδικας, εικόνες, βάσεις δεδομένων)
-            σε έναν server, ώστε να μπορεί ο κόσμος να το βλέπει στο διαδίκτυο.
-            Ως πραγματικό παράδειγμα, μπορεί να παραλληλιστεί με το ενοίκιο ενός
-            διαμερίσματος ή κτιρίου· απλώς στη δική μας περίπτωση υπάρχει σε
-            ηλεκτρονική μορφή.
-          </li>
+      {/* Grid με τις 6 Κάρτες Ορισμών */}
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {definitions.map((def, index) => (
+          <div 
+            key={index} 
+            className="group bg-black/40 border border-[#2d2d2d] hover:border-[#e2841a] rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(226,132,26,0.2)]"
+          >
+            {def.icon}
+            <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-[#e2841a] transition-colors">
+              {def.title}
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              {def.desc}
+            </p>
+          </div>
+        ))}
+      </div>
 
-          <li>
-            <strong className="text-[#e2841a]">Domain Name:</strong> Το μοναδικό
-            όνομα (π.χ. mysite.com) που χρησιμοποιεί ένα website. Είναι
-            ξεχωριστό κόστος και χρειάζεται ανανέωση κάθε χρόνο. Ακόμα κι αν το
-            hosting σταματήσει (δηλαδή πάψει να εμφανίζεται δημόσια το
-            website), το domain πρέπει να πληρώνεται προκειμένου να μην χαθεί,
-            ειδικά αν σε ενδιαφέρει για μελλοντική χρήση.
-          </li>
-
-          <li>
-            <strong className="text-[#e2841a]">SEO (Search Engine Optimization):</strong>{" "}
-            Η διαδικασία που χρησιμοποιείται για να βελτιωθεί η θέση ενός website
-            στα αποτελέσματα αναζήτησης (π.χ. Google, Bing) όταν κάποιος ψάχνει
-            κάτι σχετικό με το συγκεκριμένο site. Ένα καλό SEO αυξάνει την
-            επισκεψιμότητα και την αξιοπιστία της επιχείρησης.
-          </li>
-
-          <li>
-            <strong className="text-[#e2841a]">Cookies:</strong> Μικρά αρχεία που
-            αποθηκεύονται στον υπολογιστή ή στο κινητό σου όταν επισκέπτεσαι μια
-            ιστοσελίδα. Χρησιμοποιούνται για να κάνουν την εμπειρία στο
-            διαδίκτυο πιο προσωποποιημένη και αποτελεσματική.
-          </li>
-
-          <li>
-            <strong className="text-[#e2841a]">CMS (Content Management System):</strong>{" "}
-            Λογισμικό που επιτρέπει τη διαχείριση του περιεχομένου ενός website
-            χωρίς να απαιτούνται τεχνικές γνώσεις προγραμματισμού. Παραδείγματα:
-            WordPress, Joomla, Drupal.
-          </li>
-
-          <li>
-            <strong className="text-[#e2841a]">Responsive Design:</strong> Ο τρόπος
-            σχεδίασης ενός website ώστε να προσαρμόζεται αυτόματα σε κάθε συσκευή
-            — κινητό, tablet ή υπολογιστή — διασφαλίζοντας άνετη πλοήγηση
-            παντού.
-          </li>
-
-          <li>
-            <strong className="text-[#e2841a]">SSL Certificate:</strong> Το
-            πιστοποιητικό ασφαλείας που εξασφαλίζει ότι η σύνδεση μεταξύ του
-            επισκέπτη και του website είναι κρυπτογραφημένη και ασφαλής. Είναι
-            απαραίτητο για την προστασία δεδομένων και ενισχύει την αξιοπιστία
-            και το SEO του website.
-          </li>
-        </ul>
+      {/* Επίλογος & Call to Action (CTA) */}
+      <div className="w-full max-w-4xl text-center bg-gradient-to-t from-[#111] to-black border border-[#2d2d2d] rounded-3xl p-8 sm:p-12">
+        <p className="text-gray-300 mb-8 text-lg leading-relaxed">
+          Τώρα που γνωρίζετε τα βασικά, είστε έτοιμοι να κάνετε το επόμενο βήμα. Εμείς αναλαμβάνουμε να συνδέσουμε όλα αυτά τα εργαλεία αρμονικά για να δημιουργήσουμε το ιδανικό website για εσάς.
+        </p>
+        <Link 
+          href="/timokatalogos"
+          className="inline-block bg-[#e2841a] text-black font-semibold py-3 px-8 rounded-full hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(226,132,26,0.5)] hover:shadow-[0_0_40px_rgba(226,132,26,0.9)] hover:scale-105"
+        >
+          Δείτε τα Πακέτα μας
+        </Link>
       </div>
     </section>
   );

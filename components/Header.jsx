@@ -87,7 +87,7 @@ export default function Header() {
                     href="/perissotera/ofeli-website"
                     className={`relative block py-2 font-semibold text-xs tracking-wider uppercase ${hoverLine} hover:text-[#e2841a]`}
                   >
-                    Ωφέλη Website
+                    προνόμια
                   </Link>
                   <Link
                     href="/perissotera/orismoi"
@@ -140,7 +140,7 @@ export default function Header() {
             onClick={closeMenu}
             className={`${hoverLine} py-1 hover:text-[#e2841a] text-xs font-semibold tracking-wider uppercase`}
           >
-            Ωφέλη Website
+          προνόμια
           </Link>
           <Link
             href="/perissotera/orismoi"

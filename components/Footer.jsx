@@ -1,12 +1,25 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="relative w-full text-center py-6 bg-black text-white border-t border-[#1a1a1a] mt-0">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <p className="text-sm text-gray-400">
-          © 2025{" "}
+          © 2026{" "}
           <span className="text-[#e2841a] font-semibold">VgoGenius</span> — Σχεδιασμός
           και Ανάπτυξη ιστοσελίδων. Όλα τα δικαιώματα διατηρούνται.
         </p>
+
+        {/* Links για Όρους Χρήσης & Πολιτική Απορρήτου */}
+        <div className="mt-2 flex justify-center gap-4 text-xs text-gray-400">
+          <Link href="/terms" className="hover:text-[#e2841a] underline transition-colors">
+            Όροι Χρήσης
+          </Link>
+          <span>•</span>
+          <Link href="/privacy" className="hover:text-[#e2841a] underline transition-colors">
+            Πολιτική Απορρήτου
+          </Link>
+        </div>
 
         <div className="social-links mt-3 flex justify-center gap-6">
           {/* Facebook */}
@@ -17,10 +30,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="transition-transform hover:scale-110"
           >
-            <i
-              className="fab fa-facebook text-xl"
-              style={{ color: "#1877F2" }}
-            ></i>
+            <i className="fab fa-facebook text-xl" style={{ color: "#1877F2" }}></i>
           </a>
 
           {/* Instagram */}
