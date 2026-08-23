@@ -1,15 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Hero() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 150);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section
       className="relative flex flex-col items-center justify-center text-center min-h-screen text-white overflow-hidden"
@@ -29,18 +22,18 @@ export default function Hero() {
       </video>
 
       {/* ===== Κεντρικό περιεχόμενο ===== */}
-      <div
-        className={`transition-all duration-700 ${
-          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-        }`}
-      >
+      {/* Χρησιμοποιούμε animate-fade-in αν έχεις Tailwind animations, αλλιώς εμφανίζεται κατευθείαν */}
+      <div className="z-10 flex flex-col items-center justify-center">
+        
         {/* ===== Logo ===== */}
-        <div className="w-[300px] h-[300px] mx-auto mb-8 relative">
-          <img
+        <div className="w-[300px] h-[300px] relative mb-8">
+          <Image
             src="/images/logo.webp"
             alt="VgoGenius Logo"
-            className="w-full h-full object-contain drop-shadow-[0_0_40px_#e2841a]"
-            loading="eager"
+            fill
+            priority // <-- Αυτό δίνει εντολή για αστραπιαίο κατέβασμα!
+            sizes="(max-width: 768px) 300px, 300px"
+            className="object-contain drop-shadow-[0_0_40px_#e2841a]"
           />
         </div>
 

@@ -1,28 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import Slider from "@/components/Slider";
 import Testimonials from "@/components/Testimonials";
 import ContactForm from "@/components/ContactForm";
 
 export default function HomeClient() {
-  const [loading, setLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
-
-  // Προσομοίωση μικρού preload (0.8s) για smooth είσοδο
+  // Fade-in effect ΜΟΝΟ για τα στοιχεία που σκρολάρει ο χρήστης προς τα κάτω
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-      setTimeout(() => setShowContent(true), 200);
-    }, 800);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Fade-in εμφάνιση περιεχομένου όταν μπαίνει στο viewport
-  useEffect(() => {
-    if (!showContent) return;
     const fadeEls = document.querySelectorAll(".fade-in");
     const observer = new IntersectionObserver(
       (entries) => {
@@ -37,36 +23,17 @@ export default function HomeClient() {
     );
     fadeEls.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, [showContent]);
+  }, []);
 
-  // Οθόνη φόρτωσης
-  if (loading)
-    return (
-      <div className="fixed inset-0 flex flex-col items-center justify-center bg-black z-[9999] transition-all">
-        <Image
-          src="/images/logo.webp"
-          alt="VgoGenius Logo"
-          width={288}
-          height={288}
-          priority
-          className="w-72 h-auto animate-pulse drop-shadow-[0_0_30px_#e2841a]"
-        />
-      </div>
-    );
-
-  // Κύριο περιεχόμενο
   return (
-    <main
-      className={`relative bg-black text-white overflow-visible min-h-screen transition-opacity duration-700 ${
-        showContent ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      {/* HERO SECTION */}
-      <section className="relative z-10 fade-in py-12">
+    <main className="relative bg-black text-white overflow-visible min-h-screen">
+      
+      {/* HERO SECTION - Χωρίς καθυστερήσεις ή fade-in classes, εμφανίζεται ΑΣΤΡΑΠΙΑΙΑ */}
+      <section className="relative z-10 py-12">
         <Hero />
       </section>
 
-      {/* SLIDER SECTION */}
+      {/* SLIDER SECTION - Εδώ κρατάμε το fade-in για ωραίο εφέ στο scroll */}
       <section className="relative z-20 fade-in py-12">
         <Slider />
       </section>
@@ -80,6 +47,7 @@ export default function HomeClient() {
       <section className="relative z-40 fade-in py-12">
         <ContactForm />
       </section>
+      
     </main>
   );
 }

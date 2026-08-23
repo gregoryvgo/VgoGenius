@@ -1,8 +1,16 @@
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent"; 
+
+// Ρύθμιση της γραμματοσειράς Poppins (Αφαιρέθηκε το "greek")
+const poppins = Poppins({
+  subsets: ["latin", "latin-ext"], 
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "VgoGenius | Δημιουργία με Αξιοπιστία και Όραμα",
@@ -75,37 +83,15 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="el">
-      <head>
-        {/* Προφόρτωση Google Fonts για ταχύτερο LCP */}
-        <Script
-          id="preload-font"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              const link1 = document.createElement('link');
-              link1.rel = 'preconnect';
-              link1.href = 'https://fonts.googleapis.com';
-              document.head.appendChild(link1);
-
-              const link2 = document.createElement('link');
-              link2.rel = 'preconnect';
-              link2.href = 'https://fonts.gstatic.com';
-              link2.crossOrigin = 'true';
-              document.head.appendChild(link2);
-            `,
-          }}
-        />
-      </head>
-
       <body
         id="vgobody"
+        className={poppins.className}
         style={{
           color: "#fff",
           position: "relative",
           zIndex: 0,
           opacity: 1,
           transition: "opacity 0.4s ease",
-          fontFamily: "Poppins, sans-serif",
         }}
       >
         {/* Φόρτωση Font Awesome */}
