@@ -53,8 +53,12 @@ export default function Header() {
         }`}
       >
         <div className="w-full max-w-6xl px-6 flex items-center justify-center">
+          
+          {/* ΠΡΟΣΘΕΘΗΚΕ ΤΟ aria-label ΕΔΩ */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"}
+            aria-expanded={menuOpen}
             className="absolute left-4 top-5 md:hidden text-[#e2841a]"
           >
             {menuOpen ? <X size={28} /> : <Menu size={28} />}

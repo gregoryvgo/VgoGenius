@@ -49,6 +49,7 @@ export default function ContactForm() {
               type="text"
               id="name"
               name="name"
+              aria-label="Το όνομά σας"
               placeholder="Το όνομά σας"
               required
               className="w-full border border-[#e2841a] rounded-lg p-3 bg-black/50 text-white focus:outline-none focus:ring-2 focus:ring-[#e2841a] transition-all"
@@ -58,6 +59,7 @@ export default function ContactForm() {
               type="email"
               id="email"
               name="email"
+              aria-label="Το email σας"
               placeholder="Το email σας"
               required
               className="w-full border border-[#e2841a] rounded-lg p-3 bg-black/50 text-white focus:outline-none focus:ring-2 focus:ring-[#e2841a] transition-all"
@@ -67,6 +69,7 @@ export default function ContactForm() {
               id="message"
               name="message"
               rows="5"
+              aria-label="Το μήνυμά σας"
               placeholder="Το μήνυμά σας"
               required
               className="w-full border border-[#e2841a] rounded-lg p-3 bg-black/50 text-white focus:outline-none focus:ring-2 focus:ring-[#e2841a] transition-all md:col-span-2"
@@ -134,6 +137,7 @@ export default function ContactForm() {
               href="https://www.facebook.com/profile.php?id=61583187277864"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Επισκεφτείτε τη σελίδα μας στο Facebook"
               className="transition-transform hover:scale-110"
             >
               <i
@@ -146,6 +150,7 @@ export default function ContactForm() {
               href="https://www.instagram.com/vgogenius/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Επισκεφτείτε τη σελίδα μας στο Instagram"
               className="transition-transform hover:scale-110"
             >
               <i

@@ -111,6 +111,7 @@ export default function EpikoinoniaClient() {
                 <input
                   type="text"
                   name="name"
+                  aria-label="Το όνομά σας"
                   placeholder="Το όνομά σας"
                   required
                   className="border border-[#e2841a] rounded-lg p-3 md:p-4 text-sm md:text-lg bg-black/80 text-white focus:outline-none focus:ring-2 focus:ring-[#e2841a] transition-all"
@@ -119,6 +120,7 @@ export default function EpikoinoniaClient() {
                 <input
                   type="email"
                   name="email"
+                  aria-label="Το email σας"
                   placeholder="Το email σας"
                   required
                   className="border border-[#e2841a] rounded-lg p-3 md:p-4 text-sm md:text-lg bg-black/80 text-white focus:outline-none focus:ring-2 focus:ring-[#e2841a] transition-all"
@@ -129,6 +131,7 @@ export default function EpikoinoniaClient() {
                   rows="7"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
+                  aria-label="Το μήνυμά σας"
                   placeholder="Το μήνυμά σας"
                   required
                   className="border border-[#e2841a] rounded-lg p-3 md:p-4 text-sm md:text-lg bg-black/80 text-white focus:outline-none focus:ring-2 focus:ring-[#e2841a] transition-all"
@@ -205,6 +208,7 @@ export default function EpikoinoniaClient() {
                   href="https://www.facebook.com/profile.php?id=61583187277864"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Επισκεφτείτε τη σελίδα μας στο Facebook"
                   className="text-[#1877F2] hover:opacity-80 transition-opacity"
                 >
                   <FaFacebook />
@@ -213,6 +217,7 @@ export default function EpikoinoniaClient() {
                   href="https://www.instagram.com/vgogenius/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Επισκεφτείτε τη σελίδα μας στο Instagram"
                   className="text-[#E4405F] hover:opacity-80 transition-opacity"
                 >
                   <FaInstagram />
