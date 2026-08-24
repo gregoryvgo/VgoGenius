@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent"; 
 
-// Ρύθμιση της γραμματοσειράς Poppins (Αφαιρέθηκε το "greek")
+// Ρύθμιση της γραμματοσειράς Poppins
 const poppins = Poppins({
   subsets: ["latin", "latin-ext"], 
   weight: ["300", "400", "500", "600", "700"],
@@ -17,7 +17,16 @@ export const metadata = {
   description:
     "Η VgoGenius δημιουργεί επαγγελματικά websites με Next.js και Tailwind CSS. Σύγχρονη αισθητική, ταχύτητα και πλήρες SEO για κάθε επιχείρηση.",
   keywords: [
+    // Brand Variations / Ορθογραφικά Λάθη
     "VgoGenius",
+    "vgogenious",
+    "bgogenius",
+    "bgogenious",
+    "vgotzinious",
+    "ωγογενιθς",
+    "vgo genius",
+    "βγοτζινιους",
+    // Core Keywords
     "κατασκευή ιστοσελίδων",
     "web design Ελλάδα",
     "Next.js",
@@ -39,7 +48,7 @@ export const metadata = {
     siteName: "VgoGenius",
     images: [
       {
-        url: "https://vgogenius.gr/images/og-home.jpg",
+        url: "https://vgogenius.gr/image.png", // Χρησιμοποιεί το image.png από το public
         width: 1200,
         height: 630,
         alt: "VgoGenius Website Design",
@@ -53,7 +62,7 @@ export const metadata = {
     title: "VgoGenius | Web Design & Development",
     description:
       "Επαγγελματικά websites με Next.js, Tailwind CSS και SEO για σύγχρονες επιχειρήσεις.",
-    images: ["https://vgogenius.gr/images/og-home.jpg"],
+    images: ["https://vgogenius.gr/image.png"], // Το ίδιο και εδώ για το Twitter
   },
   icons: {
     icon: "/favicon.ico",
@@ -81,6 +90,39 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
+  // JSON-LD Schema
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "VgoGenius",
+    "alternateName": [
+      "vgogenious", 
+      "bgogenius", 
+      "bgogenious", 
+      "vgotzinious", 
+      "ωγογενιθς", 
+      "Vgo Genius",
+      "βγοτζινιους"
+    ],
+    "url": "https://vgogenius.gr",
+    "logo": "https://vgogenius.gr/images/logo.webp", // Το λογότυπο που είδαμε στο φάκελο images
+    "description": "Η VgoGenius δημιουργεί επαγγελματικά websites με Next.js και Tailwind CSS.",
+    "founder": {
+      "@type": "Person",
+      "name": "Γρηγόρης Βγόντζας",
+      "jobTitle": "Web Developer"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Αθήνα",
+      "addressCountry": "GR"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61583187277864",
+      "https://www.instagram.com/vgogenius/"
+    ]
+  };
+
   return (
     <html lang="el">
       <body
@@ -94,6 +136,12 @@ export default function RootLayout({ children }) {
           transition: "opacity 0.4s ease",
         }}
       >
+        {/* JSON-LD Schema Script */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
         {/* Φόρτωση Font Awesome */}
         <Script
           id="font-awesome-loader"
