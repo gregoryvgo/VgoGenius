@@ -107,6 +107,18 @@ export default function RootLayout({ children }) {
     "url": "https://vgogenius.gr",
     "logo": "https://vgogenius.gr/images/logo.webp", // Το λογότυπο που είδαμε στο φάκελο images
     "description": "Η VgoGenius δημιουργεί επαγγελματικά websites με Next.js και Tailwind CSS.",
+    "serviceType": ["Web Design", "Website Development", "SEO"],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Greece"
+    },
+    "email": "vgogenius@gmail.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "vgogenius@gmail.com",
+      "availableLanguage": ["Greek", "English"]
+    },
     "founder": {
       "@type": "Person",
       "name": "Γρηγόρης Βγόντζας",

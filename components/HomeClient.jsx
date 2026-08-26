@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
+import DemosShowcase from "@/components/DemosShowcase";
 import Slider from "@/components/Slider";
 import Testimonials from "@/components/Testimonials";
 import ContactForm from "@/components/ContactForm";
@@ -33,18 +34,23 @@ export default function HomeClient() {
         <Hero />
       </section>
 
-      {/* SLIDER SECTION - Εδώ κρατάμε το fade-in για ωραίο εφέ στο scroll */}
+      {/* DEMOS SECTION */}
       <section className="relative z-20 fade-in py-12">
+        <DemosShowcase compact />
+      </section>
+
+      {/* SLIDER SECTION - Εδώ κρατάμε το fade-in για ωραίο εφέ στο scroll */}
+      <section className="relative z-30 fade-in py-12">
         <Slider />
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <section className="relative z-30 fade-in py-12">
+      <section className="relative z-40 fade-in py-12">
         <Testimonials />
       </section>
 
       {/* CONTACT SECTION */}
-      <section className="relative z-40 fade-in py-12">
+      <section className="relative z-50 fade-in py-12">
         <ContactForm />
       </section>
       

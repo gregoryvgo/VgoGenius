@@ -6,7 +6,4 @@ module.exports = {
   changefreq: "weekly",
   priority: 0.7,
   exclude: ["/404"], // προαιρετικά
-  robotsTxtOptions: {
-    additionalSitemaps: ["https://vgogenius.gr/sitemap.xml"],
-  },
 };

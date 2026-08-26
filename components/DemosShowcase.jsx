@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import Link from "next/link";
+import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 
 const categories = [
   { label: "Όλα", value: "all" },
@@ -109,13 +111,21 @@ const demosData = [
   },
 ];
 
-export default function DemosShowcase() {
+export default function DemosShowcase({ compact = false }) {
   const [activeTab, setActiveTab] = useState("all");
+  const demosTrackRef = useRef(null);
 
   const filteredDemos =
     activeTab === "all"
       ? demosData
       : demosData.filter((item) => item.category === activeTab);
+
+  const scrollDemos = (direction) => {
+    demosTrackRef.current?.scrollBy({
+      left: direction * demosTrackRef.current.clientWidth * 0.82,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-6">
@@ -128,7 +138,7 @@ export default function DemosShowcase() {
           Δείγματα Έργων & <span className="text-[#e2841a]">Demos</span>
         </h1>
         <p className="text-gray-400 text-sm md:text-base mt-3 leading-relaxed">
-          Εξερευνήστε live εφαρμογές και εξειδικευμένες web λύσεις για σύγχρονες επιχειρήσεις και επαγγελματίες.
+          Δείτε άμεσα projects και πάρτε ιδέες για την αναβάθμιση της δικής σας επιχείρησης!
         </p>
       </div>
 
@@ -149,14 +159,41 @@ export default function DemosShowcase() {
         ))}
       </div>
 
-      {/* Grid: Χρησιμοποιούμε 6-στηλο layout (lg:grid-cols-6) για να κεντράρουμε τις 2 τελευταίες κάρτες */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+      {compact && (
+        <div className="hidden md:flex justify-end gap-2 -mt-5 mb-4">
+          <button
+            type="button"
+            onClick={() => scrollDemos(-1)}
+            className="w-11 h-11 inline-flex items-center justify-center rounded-full border border-neutral-700 bg-neutral-950 text-white hover:border-[#e2841a] hover:text-[#e2841a] transition-colors"
+            aria-label="Προηγούμενα demos"
+          >
+            <ArrowLeft size={19} aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollDemos(1)}
+            className="w-11 h-11 inline-flex items-center justify-center rounded-full border border-neutral-700 bg-neutral-950 text-white hover:border-[#e2841a] hover:text-[#e2841a] transition-colors"
+            aria-label="Επόμενα demos"
+          >
+            <ArrowRight size={19} aria-hidden="true" />
+          </button>
+        </div>
+      )}
+
+      {/* Mobile scrolls horizontally; desktop uses the arrow controls above. */}
+      <div
+        ref={compact ? demosTrackRef : undefined}
+        className={compact
+          ? "flex gap-5 overflow-x-auto snap-x snap-mandatory pb-5 -mx-6 px-6 md:mx-0 md:px-0 md:overflow-hidden"
+          : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8"}
+      >
         {filteredDemos.map((demo, index) => (
           <div
             key={demo.id}
-            className={`group rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-[#e2841a]/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(226,132,26,0.15)] 
+            className={`group rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-[#e2841a]/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(226,132,26,0.15)]
+              ${compact ? "min-w-[min(82vw,360px)] md:min-w-[360px] snap-start" : ""}
               lg:col-span-2 
-              ${activeTab === "all" && index === 6 ? "lg:col-start-2" : ""}
+              ${!compact && activeTab === "all" && index === 6 ? "lg:col-start-2" : ""}
             `}
           >
             {/* Image Preview Box */}
@@ -201,15 +238,28 @@ export default function DemosShowcase() {
                   href={demo.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center py-2.5 px-4 bg-[#e2841a] hover:bg-[#c97112] text-black font-bold text-xs rounded-lg transition-colors shadow-md"
+                  className="inline-flex w-full items-center justify-center gap-2 py-2.5 px-4 bg-[#e2841a] hover:bg-[#c97112] text-black font-bold text-xs rounded-lg transition-colors shadow-md"
                 >
-                  Live Demo ↗
+                  Live Demo
+                  <ExternalLink size={14} aria-hidden="true" />
                 </a>
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {compact && (
+        <div className="mt-8 text-center">
+          <Link
+            href="/demos"
+            className="inline-flex items-center gap-2 border border-[#e2841a] px-5 py-2.5 rounded-lg text-sm font-semibold text-[#e2841a] hover:bg-[#e2841a] hover:text-black transition-colors"
+          >
+            Δείτε όλα τα demos
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

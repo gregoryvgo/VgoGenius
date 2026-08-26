@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { generatePageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "Πολιτική Απορρήτου | VgoGenius",
+export const metadata = generatePageMeta({
+  title: "Πολιτική Απορρήτου",
   description: "Πολιτική απορρήτου και προστασίας προσωπικών δεδομένων του VgoGenius.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPolicyPage() {
   return (
