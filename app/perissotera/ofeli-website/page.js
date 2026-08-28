@@ -59,24 +59,25 @@ export default function OfeliWebsite() {
     <section className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 sm:px-6 py-28 overflow-x-hidden relative">
       
       {/* Κεντρικό Κείμενο (Hero Section της σελίδας) */}
-      <div className="w-full max-w-5xl text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-[#e2841a] leading-tight">
+      <div className="benefits-heading w-full max-w-5xl text-center mb-16">
+        <h1 className="benefits-title text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-[#e2841a] leading-tight">
           Γιατί να δημιουργήσω website για την επιχείρησή μου;
         </h1> 
-        <p className="text-gray-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed mb-10">
+        <p className="benefits-intro text-gray-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed mb-10">
           Ένα website δεν είναι απλώς ένα ψηφιακό φυλλάδιο. Είναι το κέντρο επικοινωνίας, προβολής και ανάπτυξης της εταιρείας.
         </p>
-        <h2 className="text-xl sm:text-2xl font-semibold text-[#e2841a]">
+        <h2 className="benefits-subtitle text-xl sm:text-2xl font-semibold text-[#e2841a]">
           Οι βασικοί λόγοι που ωφελούν την επιχείρησή σας:
         </h2>
       </div>
 
       {/* Grid με τις 6 Κάρτες */}
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <div className="benefits-grid w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {benefits.map((benefit, index) => (
           <div 
             key={index} 
-            className="group bg-black/40 border border-[#2d2d2d] hover:border-[#e2841a] rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(226,132,26,0.2)]"
+            className="benefit-card group bg-black/40 border border-[#2d2d2d] hover:border-[#e2841a] rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(226,132,26,0.2)]"
+            style={{ "--card-delay": `${index * 100}ms` }}
           >
             {benefit.icon}
             <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-[#e2841a] transition-colors">
@@ -90,7 +91,7 @@ export default function OfeliWebsite() {
       </div>
 
       {/* Επίλογος & Call to Action (CTA) */}
-      <div className="w-full max-w-4xl text-center bg-gradient-to-t from-[#111] to-black border border-[#2d2d2d] rounded-3xl p-8 sm:p-12">
+      <div className="benefits-cta w-full max-w-4xl text-center bg-gradient-to-t from-[#111] to-black border border-[#2d2d2d] rounded-3xl p-8 sm:p-12">
         <p className="text-gray-300 mb-8 text-lg md:text-xl leading-relaxed">
           Συνολικά, η ύπαρξη ιστοσελίδας δεν είναι πολυτέλεια αλλά απαραίτητη προϋπόθεση για να παραμείνει μια εταιρεία ορατή, ανταγωνιστική και εξελίξιμη στη σύγχρονη αγορά.
         </p>
@@ -101,6 +102,7 @@ export default function OfeliWebsite() {
           Ας ξεκινήσουμε 
         </Link>
       </div>
+
     </section>
   );
 }

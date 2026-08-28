@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 
@@ -114,6 +114,8 @@ const demosData = [
 export default function DemosShowcase({ compact = false }) {
   const [activeTab, setActiveTab] = useState("all");
   const demosTrackRef = useRef(null);
+  const carouselPausedRef = useRef(false);
+  const animationFrameRef = useRef(null);
 
   const filteredDemos =
     activeTab === "all"
@@ -126,6 +128,32 @@ export default function DemosShowcase({ compact = false }) {
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    if (!compact) return undefined;
+
+    let previousTime;
+    const animateCarousel = (time) => {
+      const track = demosTrackRef.current;
+      if (track && !carouselPausedRef.current) {
+        const elapsed = previousTime ? time - previousTime : 0;
+        const nextPosition = track.scrollLeft + elapsed * 0.035;
+        const loopPoint = track.scrollWidth / 2;
+
+        track.scrollLeft = loopPoint > 0 && nextPosition >= loopPoint
+          ? nextPosition - loopPoint
+          : nextPosition;
+      }
+
+      previousTime = time;
+      animationFrameRef.current = requestAnimationFrame(animateCarousel);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animateCarousel);
+    return () => cancelAnimationFrame(animationFrameRef.current);
+  }, [compact, activeTab]);
+
+  const renderedDemos = compact ? [...filteredDemos, ...filteredDemos] : filteredDemos;
 
   return (
     <div className="max-w-7xl mx-auto px-6">
@@ -183,13 +211,21 @@ export default function DemosShowcase({ compact = false }) {
       {/* Mobile scrolls horizontally; desktop uses the arrow controls above. */}
       <div
         ref={compact ? demosTrackRef : undefined}
+        onMouseEnter={() => { carouselPausedRef.current = true; }}
+        onMouseLeave={() => { carouselPausedRef.current = false; }}
+        onFocus={() => { carouselPausedRef.current = true; }}
+        onBlur={() => { carouselPausedRef.current = false; }}
+        onTouchStart={() => { carouselPausedRef.current = true; }}
+        onTouchEnd={() => { carouselPausedRef.current = false; }}
+        onTouchCancel={() => { carouselPausedRef.current = false; }}
         className={compact
-          ? "flex gap-5 overflow-x-auto snap-x snap-mandatory pb-5 -mx-6 px-6 md:mx-0 md:px-0 md:overflow-hidden"
+          ? "flex gap-5 overflow-x-auto pb-5 -mx-6 px-6 md:mx-0 md:px-0 md:overflow-hidden"
           : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8"}
       >
-        {filteredDemos.map((demo, index) => (
+        {renderedDemos.map((demo, index) => (
           <div
-            key={demo.id}
+            key={`${demo.id}-${index}`}
+            aria-hidden={compact && index >= filteredDemos.length ? "true" : undefined}
             className={`group rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-[#e2841a]/60 transition-all duration-300 flex flex-col overflow-hidden hover:shadow-[0_0_25px_rgba(226,132,26,0.15)]
               ${compact ? "min-w-[min(82vw,360px)] md:min-w-[360px] snap-start" : ""}
               lg:col-span-2 

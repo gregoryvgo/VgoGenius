@@ -7,9 +7,9 @@ export default function EtairiaClient() {
       lang="el"
       className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 sm:px-6 py-28 sm:py-36 overflow-x-hidden"
     >
-      <div className="w-full max-w-3xl bg-black/60 border border-[#2d2d2d] rounded-3xl shadow-[0_0_40px_rgba(226,132,26,0.3)] p-6 sm:p-12 text-left leading-relaxed backdrop-blur-md">
+      <div className="company-frame w-full max-w-3xl bg-black/60 border border-[#2d2d2d] rounded-3xl shadow-[0_0_40px_rgba(226,132,26,0.3)] p-6 sm:p-12 text-left leading-relaxed backdrop-blur-md">
         <h1
-          className="
+          className="company-title
             text-lg sm:text-2xl md:text-4xl
             font-bold text-center mb-2 text-[#e2841a]
             leading-tight break-words hyphens-auto max-w-full mx-auto
@@ -19,7 +19,7 @@ export default function EtairiaClient() {
         </h1>
 
         <h2
-          className="
+          className="company-subtitle
             text-lg sm:text-2xl md:text-3xl
             font-semibold text-center mb-10 text-[#e2841a]
             leading-snug break-words hyphens-auto max-w-full mx-auto
@@ -28,25 +28,26 @@ export default function EtairiaClient() {
           Αξιοπιστία και Όραμα
         </h2>
 
-        <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">
+        <div className="company-content">
+          <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">
           Η <strong>VgoGenius</strong> είναι μια σύγχρονη εταιρεία που ιδρύθηκε το{" "}
           <strong>2025</strong>, με στόχο να προσφέρει ολοκληρωμένες λύσεις στον
           χώρο του ψηφιακού σχεδιασμού και της διαδικτυακής παρουσίας. Με βασικό
           στέλεχος τον <strong>Γρηγόρη Βγόντζα</strong>, η εταιρεία στηρίζεται σε ένα{" "}
           <strong>νεανικό αλλά άρτια καταρτισμένο επαγγελματικό δυναμικό</strong>,
           το οποίο συνδυάζει δημιουργικότητα, τεχνογνωσία και αποφασιστικότητα.
-        </p>
+          </p>
 
-        <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">
+          <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">
           Η φιλοσοφία της VgoGenius βασίζεται στην{" "}
           <strong>προσωποποιημένη εξυπηρέτηση</strong>. Κάθε πελάτης αντιμετωπίζεται
           ως ξεχωριστή περίπτωση, με ανάγκες και στόχους που απαιτούν
           εξατομικευμένες λύσεις. Δεν προσφέρουμε έτοιμες φόρμες, αλλά{" "}
           <strong>μελετημένα projects</strong> που αναδεικνύουν την ταυτότητα, το
           ύφος και τη στρατηγική κάθε επιχείρησης.
-        </p>
+          </p>
 
-        <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">
+          <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">
           Η ομάδα μας αποτελείται από επαγγελματίες που{" "}
           <strong>γνωρίζουν σε βάθος τις απαιτήσεις της σύγχρονης αγοράς</strong>.
           Σ’ ένα περιβάλλον όπου η τεχνολογία εξελίσσεται με ταχύτητα και ο
@@ -56,9 +57,9 @@ export default function EtairiaClient() {
           <strong>ευελιξία</strong>. Έτσι, εξασφαλίζουμε ότι κάθε συνεργασία
           εξελίσσεται σε μια ουσιαστική, αποδοτική και μακροχρόνια σχέση
           εμπιστοσύνης.
-        </p>
+          </p>
 
-        <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">
+          <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">
           Αντιλαμβανόμαστε πλήρως τις{" "}
           <strong>δυσκολίες της σύγχρονης επιχειρηματικότητας</strong>. Η
           διαχείριση του χρόνου και των πόρων καθώς και η ανάγκη για ψηφιακή προβολή
@@ -66,9 +67,9 @@ export default function EtairiaClient() {
           ως πάροχος υπηρεσιών, αλλά ως{" "}
           <strong>στρατηγικός συνεργάτης</strong> που καθοδηγεί, στηρίζει και
           εξελίσσει κάθε επιχείρηση που μας εμπιστεύεται.
-        </p>
+          </p>
 
-        <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">
+          <p className="mb-6 text-[1.1rem] text-gray-300 indent-6">
           Η αποστολή μας είναι να μετατρέπουμε τις ιδέες των πελατών σε{" "}
           <strong>λειτουργικά, αισθητικά και αποδοτικά ψηφιακά έργα</strong>,
           προτείνοντας παράλληλα{" "}
@@ -77,9 +78,9 @@ export default function EtairiaClient() {
           <strong>συμμετέχουμε ενεργά στη διαμόρφωση του οράματος κάθε έργου</strong>,
           συνεργαζόμαστε στενά με τον πελάτη και συμβάλλουμε ουσιαστικά στη
           δημιουργία μιας ολοκληρωμένης και αποτελεσματικής ψηφιακής παρουσίας.
-        </p>
+          </p>
 
-        <p className="mb-12 text-[1.1rem] text-gray-300 indent-6">
+          <p className="mb-12 text-[1.1rem] text-gray-300 indent-6">
           Κάθε project για εμάς είναι μια{" "}
           <strong>κοινή δημιουργική διαδικασία</strong> με στόχο το μέγιστο δυνατό
           αποτέλεσμα. Η <strong>VgoGenius</strong> δεν είναι απλώς μια εταιρεία.
@@ -87,14 +88,53 @@ export default function EtairiaClient() {
           <strong>δύναμη της συνεργασίας, της δημιουργικότητας και της εξέλιξης</strong>,
           με κοινό σκοπό την{" "}
           <strong>πραγματική επιτυχία των πελατών μας</strong>.
-        </p>
+          </p>
 
-        <div className="text-left text-[#e2841a] font-semibold italic mt-8 text-[1.15rem] leading-relaxed">
-          Με εκτίμηση,<br />
-          Ο Ιδρυτής της εταιρείας,<br />
-          Γρηγόρης Βγόντζας
+          <div className="text-left text-[#e2841a] font-semibold italic mt-8 text-[1.15rem] leading-relaxed">
+            Με εκτίμηση,<br />
+            Ο Ιδρυτής της εταιρείας,<br />
+            Γρηγόρης Βγόντζας
+          </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes companyFrameEnter {
+          from { opacity: 0; transform: translateX(100%); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes companyContentEnter {
+          from { opacity: 0; transform: translateX(24px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        .company-frame {
+          animation: companyFrameEnter 0.8s ease-out both;
+        }
+
+        .company-title,
+        .company-subtitle,
+        .company-content {
+          opacity: 0;
+          animation: companyContentEnter 0.7s ease-out both;
+        }
+
+        .company-title { animation-delay: 0.85s; }
+        .company-subtitle { animation-delay: 1.25s; }
+        .company-content { animation-delay: 1.65s; }
+
+        @media (prefers-reduced-motion: reduce) {
+          .company-frame,
+          .company-title,
+          .company-subtitle,
+          .company-content {
+            animation: none;
+            opacity: 1;
+            transform: none;
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -8,25 +8,25 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 // Λίστα με τις λεπτομέρειες των πακέτων
 const packageDetails = {
-  OnePager: `Επιθυμώ την δημιουργία ενός website OnePager με 250 €:
+  OnePager: `Επιθυμώ την δημιουργία ενός website OnePager με 150 €:
 • 1 σελίδα
 • Responsive design (κινητά & tablet)
 • Σύνδεση με social media
 • Βασικό SEO (τίτλοι, περιγραφές, alt text)`,
 
-  Βασικό: `Επιθυμώ την δημιουργία ενός website Βασικό με 349 €:
+  Βασικό: `Επιθυμώ την δημιουργία ενός website Βασικό με 249 €:
 • Έως 4 σελίδες (Αρχική, Υπηρεσίες, Εταιρεία, Επικοινωνία)
 • Responsive design (κινητά & tablet)
 • Σύνδεση με social media
 • Βασικό SEO (τίτλοι, περιγραφές, alt text)`,
 
-  Επαγγελματικό: `Επιθυμώ την δημιουργία ενός website Επαγγελματικό με 690 €:
+  Επαγγελματικό: `Επιθυμώ την δημιουργία ενός website Επαγγελματικό με 450 €:
 • Έως 6 σελίδες (περιλαμβάνει gallery & blog)
 • Προηγμένο SEO (λέξεις-κλειδιά, Google Business, Analytics)
 • Εγκατάσταση SSL (https)
 • Δυνατότητα μελλοντικών επεκτάσεων`,
 
-  Premium: `Επιθυμώ την δημιουργία ενός website Premium με 890 €:
+  Premium: `Επιθυμώ την δημιουργία ενός website Premium με 600 €:
 • Έως 10 σελίδες
 • Πλήρες SEO + Στρατηγική περιεχομένου (άρθρα, keywords)
 • White-label παρουσίαση (με δικό σας brand)

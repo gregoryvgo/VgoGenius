@@ -56,7 +56,7 @@ export default function TimokatalogosClient() {
               <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4">
                 OnePager
               </h3>
-              <p className="text-3xl md:text-4xl font-bold mb-6 text-white">250 €</p>
+              <p className="text-3xl md:text-4xl font-bold mb-6 text-white">150 €</p>
               <ul className="text-gray-300 text-left space-y-2 mb-8">
                 <li>• 1 σελίδα</li>
                 <li>• Responsive design (κινητά & tablet)</li>
@@ -85,10 +85,10 @@ export default function TimokatalogosClient() {
 
               <div className="flex flex-col items-center mb-6">
                 <span className="text-sm text-gray-400 line-through italic self-start ml-2 mb-1">
-                  450 €
+                  350 €
                 </span>
                 <span className="text-3xl md:text-4xl font-bold text-white">
-                  349 €
+                  249 €
                 </span>
               </div>
 
@@ -114,7 +114,7 @@ export default function TimokatalogosClient() {
               <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4">
                 Επαγγελματικό
               </h3>
-              <p className="text-3xl md:text-4xl font-bold mb-6 text-white">690 €</p>
+              <p className="text-3xl md:text-4xl font-bold mb-6 text-white">450 €</p>
               <ul className="text-gray-300 text-left space-y-2 mb-8">
                 <li>• Έως 6 σελίδες (περιλαμβάνει gallery & blog)</li>
                 <li>• Προηγμένο SEO (λέξεις-κλειδιά, Google Business, Analytics)</li>
@@ -139,7 +139,7 @@ export default function TimokatalogosClient() {
               <h3 className="text-xl md:text-2xl font-semibold text-[#e2841a] mb-4 text-center">
                 Premium
               </h3>
-              <p className="text-3xl md:text-4xl font-bold mb-6 text-white text-center">890 €</p>
+              <p className="text-3xl md:text-4xl font-bold mb-6 text-white text-center">600 €</p>
               <ul className="text-gray-300 text-left space-y-2 mb-8">
                 <li>• Έως 10 σελίδες</li>
                 <li>• Πλήρες SEO + Στρατηγική περιεχομένου (άρθρα, keywords)</li>

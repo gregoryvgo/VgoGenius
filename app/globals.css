@@ -114,8 +114,176 @@ button:hover {
 }
 
 /* ======== RESPONSIVE ======== */
+.benefits-heading,
+.benefits-grid,
+.benefits-cta {
+  animation: benefitsReveal 0.8s ease-out both;
+}
+
+@keyframes benefitsReveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes benefitsGlow {
+  0%, 100% { text-shadow: 0 0 0 rgba(226, 132, 26, 0); }
+  50% { text-shadow: 0 0 24px rgba(226, 132, 26, 0.7); }
+}
+
+.benefits-title {
+  animation: benefitsGlow 3s ease-in-out 1s infinite;
+}
+
+.benefits-grid {
+  animation-delay: 0.25s;
+}
+
+.benefit-card {
+  opacity: 0;
+  animation: benefitsReveal 0.7s ease-out var(--card-delay) both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.benefits-cta {
+  animation-delay: 0.9s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .benefits-heading,
+  .benefits-grid,
+  .benefit-card,
+  .benefits-cta,
+  .benefits-title {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@keyframes whyHeadingEnter {
+  from { opacity: 0; transform: translateX(36px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes whyCardEnter {
+  from { opacity: 0; transform: translateY(26px) scale(0.94); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.why-heading {
+  animation: whyHeadingEnter 0.8s ease-out both;
+}
+
+.why-title {
+  animation: benefitsGlow 3s ease-in-out 0.9s infinite;
+}
+
+.why-grid,
+.why-cta {
+  opacity: 0;
+  animation: whyHeadingEnter 0.8s ease-out 0.25s both;
+}
+
+.why-card {
+  opacity: 0;
+  animation: whyCardEnter 0.7s ease-out var(--why-delay) both;
+}
+
+.why-card svg {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.why-card:hover svg,
+.why-card:focus-within svg {
+  transform: translateY(-4px) rotate(8deg) scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(226, 132, 26, 0.75));
+}
+
+.why-cta {
+  animation-delay: 1.05s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-heading,
+  .why-grid,
+  .why-card,
+  .why-cta,
+  .why-title {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .why-card svg {
+    transition: none;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     min-height: 80vh;
+  }
+}
+
+@keyframes definitionsHeadingEnter {
+  from { opacity: 0; transform: translateX(-34px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes definitionsCardEnter {
+  from { opacity: 0; transform: translateY(24px) scale(0.96) rotate(-1deg); }
+  to { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+}
+
+@keyframes definitionsIconPulse {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(226, 132, 26, 0)); }
+  50% { filter: drop-shadow(0 0 10px rgba(226, 132, 26, 0.8)); }
+}
+
+.definitions-heading {
+  animation: definitionsHeadingEnter 0.8s ease-out both;
+}
+
+.definitions-title {
+  animation: definitionsIconPulse 2.8s ease-in-out 0.9s infinite;
+}
+
+.definitions-grid,
+.definitions-cta {
+  opacity: 0;
+  animation: definitionsHeadingEnter 0.8s ease-out 0.25s both;
+}
+
+.definition-card {
+  opacity: 0;
+  animation: definitionsCardEnter 0.7s ease-out var(--definition-delay) both;
+}
+
+.definition-card svg {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.definition-card:hover svg,
+.definition-card:focus-within svg {
+  transform: scale(1.15) rotate(-6deg);
+  filter: drop-shadow(0 0 10px rgba(226, 132, 26, 0.7));
+}
+
+.definitions-cta {
+  animation-delay: 1.05s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .definitions-heading,
+  .definitions-grid,
+  .definition-card,
+  .definitions-cta,
+  .definitions-title {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .definition-card svg {
+    transition: none;
   }
 }

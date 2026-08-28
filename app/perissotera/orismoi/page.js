@@ -61,21 +61,22 @@ export default function OrismoiPage() {
     <section className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 sm:px-6 py-28 overflow-x-hidden relative">
       
       {/* Κεντρικό Κείμενο */}
-      <div className="w-full max-w-5xl text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-[#e2841a] leading-tight">
+      <div className="definitions-heading w-full max-w-5xl text-center mb-16">
+        <h1 className="definitions-title text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-[#e2841a] leading-tight">
           Βασικά Εργαλεία
         </h1>
-        <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        <p className="definitions-intro text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
           Για να κατανοήσει κάποιος σωστά τη διαδικασία δημιουργίας ενός website, είναι σημαντικό να γνωρίζει ορισμένους βασικούς όρους που χρησιμοποιούνται σε κάθε στάδιο της ανάπτυξης και λειτουργίας του.
         </p>
       </div>
 
       {/* Grid με τις 6 Κάρτες Ορισμών */}
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <div className="definitions-grid w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {definitions.map((def, index) => (
           <div 
             key={index} 
-            className="group bg-black/40 border border-[#2d2d2d] hover:border-[#e2841a] rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(226,132,26,0.2)]"
+            className="definition-card group bg-black/40 border border-[#2d2d2d] hover:border-[#e2841a] rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(226,132,26,0.2)]"
+            style={{ "--definition-delay": `${index * 120}ms` }}
           >
             {def.icon}
             <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-[#e2841a] transition-colors">
@@ -89,7 +90,7 @@ export default function OrismoiPage() {
       </div>
 
       {/* Επίλογος & Call to Action (CTA) */}
-      <div className="w-full max-w-4xl text-center bg-gradient-to-t from-[#111] to-black border border-[#2d2d2d] rounded-3xl p-8 sm:p-12">
+      <div className="definitions-cta w-full max-w-4xl text-center bg-gradient-to-t from-[#111] to-black border border-[#2d2d2d] rounded-3xl p-8 sm:p-12">
         <p className="text-gray-300 mb-8 text-lg leading-relaxed">
           Τώρα που γνωρίζετε τα βασικά, είστε έτοιμοι να κάνετε το επόμενο βήμα. Εμείς αναλαμβάνουμε να συνδέσουμε όλα αυτά τα εργαλεία αρμονικά για να δημιουργήσουμε το ιδανικό website για εσάς.
         </p>

@@ -50,21 +50,22 @@ export default function GiatiEmas() {
     <section className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 sm:px-6 py-28 overflow-x-hidden relative">
       
       {/* Κεντρικό Κείμενο */}
-      <div className="w-full max-w-5xl text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-[#e2841a] leading-tight">
+      <div className="why-heading w-full max-w-5xl text-center mb-16">
+        <h1 className="why-title text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-[#e2841a] leading-tight">
           Γιατί Εμάς;
         </h1>
-        <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        <p className="why-intro text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
           Η <strong className="text-[#e2841a]">VgoGenius</strong> δεν προσφέρει απλώς υπηρεσίες κατασκευής ιστοσελίδων. Δημιουργούμε ψηφιακές εμπειρίες που αντικατοπτρίζουν το όραμα και την ταυτότητα της κάθε επιχείρησης.
         </p>
       </div>
 
       {/* Grid με Κάρτες */}
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <div className="why-grid w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {features.map((feature, index) => (
           <div 
             key={index} 
-            className="group bg-black/40 border border-[#2d2d2d] hover:border-[#e2841a] rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(226,132,26,0.2)]"
+            className="why-card group bg-black/40 border border-[#2d2d2d] hover:border-[#e2841a] rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(226,132,26,0.2)]"
+            style={{ "--why-delay": `${index * 120}ms` }}
           >
             {feature.icon}
             <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-[#e2841a] transition-colors">
@@ -78,7 +79,7 @@ export default function GiatiEmas() {
       </div>
 
       {/* Κατάληξη & CTA (Call to Action) */}
-      <div className="w-full max-w-4xl text-center bg-gradient-to-t from-[#111] to-black border border-[#2d2d2d] rounded-3xl p-8 sm:p-12">
+      <div className="why-cta w-full max-w-4xl text-center bg-gradient-to-t from-[#111] to-black border border-[#2d2d2d] rounded-3xl p-8 sm:p-12">
         <p className="text-gray-300 mb-8 text-lg">
           Στόχος μας είναι να αναδεικνύουμε το καλύτερο δυνατό αποτέλεσμα — τόσο αισθητικά όσο και επιχειρηματικά.
         </p>
