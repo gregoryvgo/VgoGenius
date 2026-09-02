@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import DemosShowcase from "@/components/DemosShowcase";
+import NfcTeaser from "@/components/NfcTeaser";
 import Slider from "@/components/Slider";
 import Testimonials from "@/components/Testimonials";
 import ContactForm from "@/components/ContactForm";
@@ -37,6 +38,11 @@ export default function HomeClient() {
       {/* DEMOS SECTION */}
       <section className="relative z-20 fade-in py-12">
         <DemosShowcase compact />
+      </section>
+
+      {/* NFC TEASER SECTION */}
+      <section className="relative z-25 fade-in py-6">
+        <NfcTeaser />
       </section>
 
       {/* SLIDER SECTION - Εδώ κρατάμε το fade-in για ωραίο εφέ στο scroll */}

@@ -28,7 +28,6 @@ export default function Header() {
 
   const closeMenu = () => setMenuOpen(false);
 
-  // Αλλαγή ΜΟΝΟ στη γραμματοσειρά (Tech/Professional typography)
   const baseLink =
     "relative px-3 py-[6px] font-semibold text-sm tracking-widest uppercase transition-colors";
   const hoverLine = `
@@ -54,7 +53,6 @@ export default function Header() {
       >
         <div className="w-full max-w-6xl px-6 flex items-center justify-center">
           
-          {/* ΠΡΟΣΘΕΘΗΚΕ ΤΟ aria-label ΕΔΩ */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"}
@@ -64,7 +62,7 @@ export default function Header() {
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
 
-          <nav className="hidden md:flex md:gap-10 md:items-center md:justify-center">
+          <nav className="hidden md:flex md:gap-8 md:items-center md:justify-center">
             <Link href="/" className={`${baseLink} ${hoverLine}`}>
               Αρχική
             </Link>
@@ -109,9 +107,14 @@ export default function Header() {
               Πακέτα
             </Link>
 
-            {/* ΝΕΟ LINK: Demos */}
+            {/* 1. Demos */}
             <Link href="/demos" className={`${baseLink} ${hoverLine}`}>
               Demos
+            </Link>
+
+            {/* 2. NFC Cards (ίδιο χρώμα με τα υπόλοιπα) */}
+            <Link href="/nfc-cards" className={`${baseLink} ${hoverLine}`}>
+              NFC Cards
             </Link>
 
             <Link href="/etaireia" className={`${baseLink} ${hoverLine}`}>
@@ -125,6 +128,7 @@ export default function Header() {
         </div>
       </header>
 
+      {/* Mobile Drawer */}
       <div
         className={`fixed top-0 left-0 h-full w-[200px] bg-black border-r border-[#333] z-[10000] pt-24 px-6 flex flex-col gap-6 text-sm font-semibold tracking-wider uppercase transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
@@ -140,7 +144,7 @@ export default function Header() {
             onClick={closeMenu}
             className={`${hoverLine} py-1 hover:text-[#e2841a] text-xs font-semibold tracking-wider uppercase`}
           >
-          προνόμια
+            προνόμια
           </Link>
           <Link
             href="/perissotera/orismoi"
@@ -166,13 +170,22 @@ export default function Header() {
           Πακέτα
         </Link>
 
-        {/* ΝΕΟ LINK: Demos στο Mobile Menu */}
+        {/* 1. Demos στο Mobile Menu */}
         <Link
           href="/demos"
           onClick={closeMenu}
           className={`${baseLink} ${hoverLine}`}
         >
           Demos
+        </Link>
+
+        {/* 2. NFC Cards στο Mobile Menu (ίδιο χρώμα με τα υπόλοιπα) */}
+        <Link
+          href="/nfc-cards"
+          onClick={closeMenu}
+          className={`${baseLink} ${hoverLine}`}
+        >
+          NFC Cards
         </Link>
 
         <Link
