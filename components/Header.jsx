@@ -62,7 +62,7 @@ export default function Header() {
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
 
-          <nav className="hidden md:flex md:gap-8 md:items-center md:justify-center">
+          <nav className="hidden md:flex md:gap-7 md:items-center md:justify-center">
             <Link href="/" className={`${baseLink} ${hoverLine}`}>
               Αρχική
             </Link>
@@ -112,9 +112,13 @@ export default function Header() {
               Demos
             </Link>
 
-            {/* 2. NFC Cards (ίδιο χρώμα με τα υπόλοιπα) */}
-            <Link href="/nfc-cards" className={`${baseLink} ${hoverLine}`}>
-              NFC Cards
+            {/* 2. NFC Cards & QR Stands σε 2 γραμμές στο Desktop */}
+            <Link
+              href="/nfc-cards"
+              className={`relative px-3 py-1 font-semibold text-sm tracking-widest uppercase transition-colors inline-flex flex-col items-center justify-center leading-tight text-center ${hoverLine}`}
+            >
+              <span>NFC Cards &amp;</span>
+              <span>QR Stands</span>
             </Link>
 
             <Link href="/etaireia" className={`${baseLink} ${hoverLine}`}>
@@ -170,7 +174,7 @@ export default function Header() {
           Πακέτα
         </Link>
 
-        {/* 1. Demos στο Mobile Menu */}
+        {/* Demos στο Mobile */}
         <Link
           href="/demos"
           onClick={closeMenu}
@@ -179,13 +183,13 @@ export default function Header() {
           Demos
         </Link>
 
-        {/* 2. NFC Cards στο Mobile Menu (ίδιο χρώμα με τα υπόλοιπα) */}
+        {/* NFC Cards & QR Stands στο Mobile */}
         <Link
           href="/nfc-cards"
           onClick={closeMenu}
           className={`${baseLink} ${hoverLine}`}
         >
-          NFC Cards
+          NFC &amp; QR Stands
         </Link>
 
         <Link

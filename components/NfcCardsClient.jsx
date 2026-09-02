@@ -50,7 +50,7 @@ export default function NfcCardsClient() {
 
         <div className="relative z-10 max-w-4xl mx-auto space-y-5 sm:space-y-6">
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 text-[11px] sm:text-xs font-bold tracking-widest text-[#e2841a] bg-[#e2841a]/10 border border-[#e2841a]/30 rounded-full uppercase">
-            ⚡ Έξυπνες Κάρτες & Stands Google Reviews
+             Έξυπνες Κάρτες & Stands Google Reviews
           </span>
 
           <h1 className="text-2xl sm:text-4xl font-bold tracking-tight leading-snug px-2">

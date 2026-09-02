@@ -16,7 +16,7 @@ export default function NfcTeaser() {
           {/* Αριστερή Στήλη: Κείμενο & CTA */}
           <div className="md:col-span-8 space-y-4 text-left">
             <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#e2841a] bg-[#e2841a]/10 border border-[#e2841a]/30 rounded-full">
-              ⚡ Smart Reviews • NFC & QR
+               Smart Reviews • NFC & QR
             </span>
 
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
