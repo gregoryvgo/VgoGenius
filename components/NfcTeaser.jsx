@@ -16,16 +16,16 @@ export default function NfcTeaser() {
           {/* Αριστερή Στήλη: Κείμενο & CTA */}
           <div className="md:col-span-8 space-y-4 text-left">
             <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#e2841a] bg-[#e2841a]/10 border border-[#e2841a]/30 rounded-full">
-               Smart Reviews
+              ⚡ Smart Reviews • NFC & QR
             </span>
 
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
-              Αυξήστε τις κριτικές σας στο Google με μία{" "}
-              <span className="text-[#e2841a]">NFC Κάρτα</span>
+              Αυξήστε τις κριτικές σας με{" "}
+              <span className="text-[#e2841a]">NFC Κάρτες & QR Stands</span>
             </h2>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
-              Οι πελάτες σας αφήνουν αξιολόγηση 5 αστέρων απλώς ακουμπώντας το κινητό τους στην κάρτα. Χωρίς αναζητήσεις, χωρίς κόπο, με εφάπαξ αγορά χωρίς συνδρομές.
+              Ιδανικές έξυπνες κάρτες τσέπης και επιτραπέζια stands για το ταμείο ή τα τραπέζια σας. Οι πελάτες αφήνουν αξιολόγηση 5 αστέρων με ένα άγγιγμα ή σκανάρισμα, χωρίς συνδρομές.
             </p>
 
             <div className="pt-2">
@@ -33,13 +33,13 @@ export default function NfcTeaser() {
                 href="/nfc-cards"
                 className="inline-flex items-center gap-2 bg-[#e2841a] text-black font-bold py-3 px-6 rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(226,132,26,0.5)] hover:scale-105 text-sm"
               >
-                <span>Μάθετε περισσότερα </span>
+                <span>Μάθετε περισσότερα</span>
                 <span>&rarr;</span>
               </Link>
             </div>
           </div>
 
-          {/* Δεξιά Στήλη: Mockup Κάρτας */}
+          {/* Δεξιά Στήλη: Mockup NFC Κάρτας */}
           <div className="md:col-span-4 flex justify-center">
             <div className="w-full max-w-[260px] h-[160px] rounded-2xl border-2 border-[#e2841a]/60 bg-gradient-to-br from-neutral-900 to-black p-5 flex flex-col justify-between shadow-[0_0_25px_rgba(226,132,26,0.2)] hover:border-[#e2841a] transition-all">
               <div className="flex justify-between items-center">

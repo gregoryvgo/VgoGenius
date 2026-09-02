@@ -7,8 +7,8 @@ export default function NfcCardsClient() {
   const steps = [
     {
       num: "01",
-      title: "Πλησιάστε το Κινητό",
-      desc: "Ο πελάτης ακουμπάει το smartphone του πάνω στην κάρτα NFC.",
+      title: "Πλησιάστε ή Σκανάρετε",
+      desc: "Ο πελάτης ακουμπάει το smartphone του στην κάρτα NFC ή σκανάρει το QR Code στο stand.",
     },
     {
       num: "02",
@@ -25,15 +25,19 @@ export default function NfcCardsClient() {
   const faqs = [
     {
       q: "Χρειάζεται κάποια μηνιαία συνδρομή;",
-      a: "Όχι! Πληρώνετε μόνο μία φορά για την αγορά της κάρτας. Η λειτουργία της είναι δωρεάν για πάντα.",
+      a: "Όχι! Πληρώνετε μόνο μία φορά για την αγορά της κάρτας ή του stand. Η λειτουργία τους είναι δωρεάν για πάντα.",
+    },
+    {
+      q: "Ποια η διαφορά μεταξύ NFC Card και QR Stand;",
+      a: "Η NFC Card είναι φορητή σε μέγεθος πιστωτικής, ιδανική για να την έχετε μαζί σας ή στο ταμείο. Το QR Stand είναι επιτραπέζιο plexiglass stand, ιδανικό για τραπέζια εστίασης, πάγκους και reception.",
     },
     {
       q: "Λειτουργεί με όλα τα κινητά;",
-      a: "Ναι! Όλα τα σύγχρονα κινητά (iPhone & Android) διαθέτουν NFC.",
+      a: "Ναι! Όλα τα σύγχρονα κινητά διαθέτουν NFC, ενώ το QR Code εξασφαλίζει ότι ακόμα και τα παλαιότερα κινητά μπορούν να αξιολογήσουν άμεσα.",
     },
     {
       q: "Πώς συνδέεται με τη σελίδα μου στο Google;",
-      a: "Αναλαμβάνουμε εμείς τον πλήρη προγραμματισμό της κάρτας με το επίσημο Review Link του Google Business Profile σας πριν σας την παραδώσουμε.",
+      a: "Αναλαμβάνουμε εμείς τον πλήρη προγραμματισμό της κάρτας και του stand με το επίσημο Review Link του Google Business Profile σας πριν σας τα παραδώσουμε.",
     },
   ];
 
@@ -46,16 +50,16 @@ export default function NfcCardsClient() {
 
         <div className="relative z-10 max-w-4xl mx-auto space-y-5 sm:space-y-6">
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 text-[11px] sm:text-xs font-bold tracking-widest text-[#e2841a] bg-[#e2841a]/10 border border-[#e2841a]/30 rounded-full uppercase">
-            ⚡ Έξυπνες Κάρτες Google Reviews
+            ⚡ Έξυπνες Κάρτες & Stands Google Reviews
           </span>
 
           <h1 className="text-2xl sm:text-4xl font-bold tracking-tight leading-snug px-2">
             Μάζεψε δεκάδες <span className="text-[#e2841a]">Google Reviews</span> <br />
-            με ένα απλό άγγιγμα!
+            με NFC Κάρτες & QR Stands!
           </h1>
 
           <p className="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed px-2">
-            Μετατρέψτε τους ευχαριστημένους πελάτες σας σε κριτικές 5 αστέρων στο Google Maps. Χωρίς αναζητήσεις, χωρίς καθυστερήσεις.
+            Μετατρέψτε τους ευχαριστημένους πελάτες σας σε κριτικές 5 αστέρων στο Google Maps. Ιδανικό για ταμεία, reception και τραπέζια.
           </p>
 
           <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-md mx-auto sm:max-w-none">
@@ -63,7 +67,7 @@ export default function NfcCardsClient() {
               href="/epikoinonia"
               className="w-full sm:w-auto bg-[#e2841a] text-black font-bold py-3.5 sm:py-4 px-8 rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_30px_rgba(226,132,26,0.6)] active:scale-95"
             >
-              Παραγγείλτε την Κάρτα σας
+              Παραγγείλτε Κάρτα ή Stand
             </a>
             <a
               href="#how-it-works"
@@ -73,13 +77,14 @@ export default function NfcCardsClient() {
             </a>
           </div>
 
-          {/* ===== NFC IMAGE (FULL CROP ΣΤΗΝ ΚΑΡΤΑ ΧΩΡΙΣ ΜΑΥΡΑ ΚΕΝΑ) ===== */}
+          {/* ===== NFC IMAGE ===== */}
           <div className="pt-6 sm:pt-10 flex justify-center px-2">
             <div className="relative w-full max-w-[340px] sm:max-w-[460px] h-[200px] sm:h-[240px] rounded-2xl border-2 border-[#e2841a] shadow-[0_0_30px_rgba(226,132,26,0.35)] overflow-hidden bg-neutral-900">
               <Image
                 src="/images/nfc-card.webp"
-                alt="Google Review NFC Card"
+                alt="Google Review NFC Card & QR Stand"
                 fill
+                unoptimized
                 sizes="(max-width: 640px) 340px, 460px"
                 className="object-cover object-[50%_45%]"
                 priority
@@ -114,18 +119,19 @@ export default function NfcCardsClient() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div className="space-y-5 sm:space-y-6 text-left">
             <h2 className="text-2xl sm:text-4xl font-bold leading-tight">
-              Γιατί κάθε φυσικό κατάστημα χρειάζεται μια <span className="text-[#e2841a]">NFC Card</span>;
+              Γιατί κάθε επιχείρηση χρειάζεται μια <span className="text-[#e2841a]">NFC Card ή QR Stand</span>;
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Οι περισσότεροι πελάτες φεύγουν ευχαριστημένοι αλλά ξεχνούν να αφήσουν κριτική. Η κάρτα NFC μηδενίζει τη δυσκολία και την προσπάθεια που χρειάζεται.
+              Οι περισσότεροι πελάτες φεύγουν ευχαριστημένοι αλλά ξεχνούν να αφήσουν κριτική. Οι έξυπνες κάρτες και τα επιτραπέζια stands μηδενίζουν την απόσταση και διευκολύνουν τον πελάτη στη στιγμή.
             </p>
 
             <ul className="space-y-3 sm:space-y-4">
               {[
-                "Αύξηση τοπικού SEO & εμφάνισης στο Google Maps",
-                "Ενίσχυση της εμπιστοσύνης νέων πελατών",
-                "Ανθεκτικό υλικό PVC υψηλής ποιότητας",
-                "Ενσωματωμένη τεχνολογία NFC & QR Code",
+                "Επιλογή ανάμεσα σε φορητή NFC κάρτα ή επιτραπέζιο QR Stand",
+                "Αύξηση τοπικού SEO & κατάταξης στο Google Maps",
+                "Ενίσχυση εμπιστοσύνης από νέους πελάτες",
+                "Ανθεκτικό υλικό (PVC κάρτα / Plexiglass stand)",
+                "Συνδυασμός τεχνολογίας NFC & δυναμικού QR Code",
                 "Χωρίς συνδρομές, κρυφά κόστη ή εφαρμογές",
               ].map((item, index) => (
                 <li key={index} className="flex items-center gap-3 text-slate-200 text-sm sm:text-base">
@@ -142,12 +148,16 @@ export default function NfcCardsClient() {
               CUSTOM PRINT & PROGRAMMING
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-bold">Αποκτήστε τη δική σας κάρτα</h3>
-            <p className="text-xs sm:text-sm text-slate-400">Παραδίδεται έτοιμη προγραμματισμένη με το σύνδεσμο του καταστήματός σας.</p>
+            <h3 className="text-xl sm:text-2xl font-bold">Αποκτήστε Κάρτες & Stands</h3>
+            <p className="text-xs sm:text-sm text-slate-400">Παραδίδονται έτοιμα προγραμματισμένα με το σύνδεσμο του καταστήματός σας.</p>
 
             <div className="p-5 sm:p-6 bg-neutral-950 rounded-2xl border border-neutral-800 text-left space-y-3">
               <div className="flex justify-between items-center text-xs sm:text-sm">
-                <span className="text-slate-300">Προγραμματισμός NFC</span>
+                <span className="text-slate-300">NFC Κάρτα ή QR Stand</span>
+                <span className="text-emerald-400 font-bold">Επιλογή σας</span>
+              </div>
+              <div className="flex justify-between items-center text-xs sm:text-sm">
+                <span className="text-slate-300">Προγραμματισμός & QR</span>
                 <span className="text-emerald-400 font-bold">Περιλαμβάνεται</span>
               </div>
               <div className="flex justify-between items-center text-xs sm:text-sm">
