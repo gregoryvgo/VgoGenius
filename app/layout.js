@@ -112,11 +112,11 @@ export default function RootLayout({ children }) {
       "@type": "Country",
       "name": "Greece"
     },
-    "email": "vgogenius@gmail.com",
+    "email": "info@vgogenius.gr",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "vgogenius@gmail.com",
+      "email": "info@vgogenius.gr",
       "availableLanguage": ["Greek", "English"]
     },
     "founder": {

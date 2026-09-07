@@ -91,7 +91,7 @@ export default function TermsPage() {
               7. Επικοινωνία
             </h2>
             <p className="leading-relaxed">
-              Για οποιαδήποτε απορία ή διευκρίνιση σχετικά με τους Όρους Χρήσης, μπορείτε να επικοινωνήσετε μαζί μας μέσω της <Link href="/epikoinonia" className="text-[#e2841a] underline hover:text-[#ff9d33]">φόρμας επικοινωνίας</Link> ή απευθείας στο email <span className="text-white font-medium">vgogenius@gmail.com</span>.
+              Για οποιαδήποτε απορία ή διευκρίνιση σχετικά με τους Όρους Χρήσης, μπορείτε να επικοινωνήσετε μαζί μας μέσω της <Link href="/epikoinonia" className="text-[#e2841a] underline hover:text-[#ff9d33]">φόρμας επικοινωνίας</Link> ή απευθείας στο email <span className="text-white font-medium">info@vgogenius.gr</span>.
             </p>
           </div>
 

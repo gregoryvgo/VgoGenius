@@ -94,10 +94,10 @@ export default function PrivacyPolicyPage() {
             <div className="bg-black/60 p-4 rounded-xl border border-[#e2841a]/30 inline-block mt-2">
               <span className="text-gray-400">Email Επικοινωνίας: </span>
               <a 
-                href="mailto:vgogenius@gmail.com" 
+                href="mailto:info@vgogenius.gr" 
                 className="text-[#e2841a] font-semibold hover:underline"
               >
-                vgogenius@gmail.com
+                info@vgogenius.gr
               </a>
             </div>
           </section>

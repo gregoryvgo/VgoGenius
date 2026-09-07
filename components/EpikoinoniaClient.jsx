@@ -205,10 +205,10 @@ export default function EpikoinoniaClient() {
                 <strong className="text-[#e2841a]">Email:</strong>
                 <br />
                 <a
-                  href="mailto:vgogenius@gmail.com"
+                  href="mailto:info@vgogenius.gr"
                   className="underline text-lg md:text-[1.25rem] text-white hover:text-[#e2841a] transition-colors"
                 >
-                  vgogenius@gmail.com
+                  info@vgogenius.gr
                 </a>
               </p>
             </div>
